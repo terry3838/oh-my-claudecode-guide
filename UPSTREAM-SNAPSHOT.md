@@ -11,6 +11,17 @@
 
 English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](README.ja.md) | [Español](README.es.md) | [Tiếng Việt](README.vi.md) | [Português](README.pt.md)
 
+## recent upstream commits
+
+- `fae37650 chore: update Discord invite link to OmO (Ultraworkers) server`
+- `0ec792c0 chore: gitignore release-body.md to prevent stale release notes`
+- `f93e27bc fix(release): add version sync hook + fix stale release body`
+- `8660d291 fix(ci): sync version markers to 4.9.3`
+- `884ec78d chore: bump version to 4.9.3`
+- `f9bbb99e Merge remote-tracking branch 'origin/dev'`
+- `cc71a7db Merge pull request #1982 from riftzen-bit/fix/outbox-reader-partial-lines`
+- `88d6a044 Merge pull request #1981 from riftzen-bit/fix/team-status-tmux-provider`
+
 ## top-level structure
 
 - `.claude-plugin/`

@@ -37,6 +37,15 @@
 
 이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
 
+### 최근 upstream 커밋
+
+- `fae37650 chore: update Discord invite link to OmO (Ultraworkers) server`
+- `0ec792c0 chore: gitignore release-body.md to prevent stale release notes`
+- `f93e27bc fix(release): add version sync hook + fix stale release body`
+- `8660d291 fix(ci): sync version markers to 4.9.3`
+- `884ec78d chore: bump version to 4.9.3`
+- `f9bbb99e Merge remote-tracking branch 'origin/dev'`
+
 ### 변경 파일 샘플
 
 - 이번 싸이클에서는 신규 변경 파일이 없습니다.
