@@ -1,28 +1,49 @@
-# 03 Glossary
+# OMC Glossary
 
-[[oh-my-claudecode Guide - MOC]]
+> [!info]
+> Use this note to separate **role**, **behavior**, **runtime**, and **integration** terms.
 
-## 가장 먼저 구분할 용어
+## The 6 key distinction axes
+
+1. agent vs skill
+2. `/team` vs `omc team`
+3. autopilot vs ralph
+4. command surface vs runtime surface
+5. hook event vs OpenClaw signal
+6. README frontdoor vs current repo reality
+
+## Core terms
+
+### Agent
+Role-based executor such as planner, executor, architect, critic, verifier.
+
+### Skill
+Behavior injection layer that changes how orchestration works.
 
 ### Team
-현재 OMC의 canonical orchestration surface.
+Canonical orchestration surface.
 
-### omc team
-실제 tmux CLI workers를 운영하는 runtime 표면.
+### `omc team`
+Runtime surface for tmux CLI workers.
 
-### Ralph
-verify/fix 루프를 전제로 하는 persistent execution mode.
+### Hooks
+Lifecycle injection layer.
 
-### hooks
-실행 lifecycle에 규칙과 후처리를 주입하는 확장 포인트.
+### State
+Stored execution continuity: sessions, artifacts, replay, notepads.
 
-### .omc/
-OMC의 상태 디렉터리. sessions, artifacts, replay/state가 모인다.
+### OpenClaw signal
+Normalized routing contract with fields like `kind`, `phase`, `routeKey`, `priority`.
 
-### OpenClaw integration
-OMC 이벤트를 normalized signal 형태로 라우팅하는 통합 계층.
+### Observability
+HUD, replay, session summaries, and other ways to inspect live or finished execution.
 
-## 같이 보면 좋은 노트
+### Drift
+Mismatch in wording, counts, or emphasis across README, Migration, Architecture, and Reference docs.
 
+## Related notes
+
+- [[01 Overview]]
+- [[02 Learning Paths]]
 - [[Concepts/Team vs omc team]]
 - [[Concepts/Hooks and State]]

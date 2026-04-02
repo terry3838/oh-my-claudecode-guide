@@ -39,6 +39,10 @@
   - origin top-level breadth (`docs`, `src`, `benchmarks`, `missions`, `examples`)를 전면 반영
   - upstream drift examples (`32 vs 19 agents`, `31 vs 37 skills`)를 명시
   - Obsidian live vault target을 `unset`/`not applied` 상태로 되돌리고 repo-local pack 우선 원칙 명시
+- learning paths / glossary 재작성
+  - 사용자 / 운영자 / 통합 담당자 / 기여자 기준 reading track 분리
+  - runtime / observability / benchmark / mission 관점을 학습 경로에 포함
+  - 용어집을 층위 구분 중심(agent vs skill, command vs runtime, hook event vs signal)으로 재정비
 - `OBSIDIAN-VAULT-MAP.md`
   - repo guide와 vault notes 간 대응 관계 기록
 - `obsidian/oh-my-claudecode Guide/`
