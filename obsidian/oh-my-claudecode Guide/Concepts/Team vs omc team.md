@@ -60,12 +60,12 @@ This surface tells you:
 
 ```mermaid
 flowchart LR
-    subgraph A[/team]
+    subgraph A["/team"]
         A1[canonical orchestration]
         A2[pipeline lifecycle]
         A3[user / learner mental model]
     end
-    subgraph B[omc team]
+    subgraph B["omc team"]
         B1[tmux runtime]
         B2[real CLI workers]
         B3[status / shutdown / api]

@@ -111,14 +111,14 @@ team-plan → team-prd → team-exec → team-verify → team-fix (loop)
 
 ```mermaid
 flowchart LR
-    subgraph A[/team]
+    subgraph A["/team"]
         A1[canonical orchestration surface]
         A2[shared task lifecycle]
         A3[plan → prd → exec → verify → fix]
         A4[learner-facing mental model]
     end
 
-    subgraph B[omc team]
+    subgraph B["omc team"]
         B1[tmux CLI runtime surface]
         B2[real claude/codex/gemini workers]
         B3[start / status / shutdown / api]
