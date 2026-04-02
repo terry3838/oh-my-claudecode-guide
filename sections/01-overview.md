@@ -2,11 +2,12 @@
 
 ## 이 섹션의 역할
 
-이 문서는 세 가지를 빠르게 정리한다.
+이 문서는 네 가지를 기록한다.
 
 1. 원본 저장소가 지금 어떤 프로젝트인지
-2. 이번 guide가 무엇을 근거로 재작성되었는지
-3. 학습자가 어떤 순서로 원본을 읽어야 덜 헤매는지
+2. 이번 guide가 어떤 upstream evidence를 봤는지
+3. 기존 guide가 왜 약해 보였는지
+4. 이번 개정에서 무엇을 고쳤는지
 
 ---
 
@@ -19,26 +20,34 @@
 
 ### 한 줄 요약
 
-**Claude Code 위에 멀티 에이전트 orchestration, persistent execution, tmux CLI workers, hooks, HUD, notifications, OpenClaw routing을 얹는 운영 런타임**
+**Claude Code 위에 Team orchestration, persistent execution, tmux CLI workers, hooks, HUD, notifications, OpenClaw routing, benchmark/evaluation surface를 얹는 운영 런타임 repo**
 
 ---
 
-## 이번 가이드 재작성 판단
+## 왜 기존 guide가 허전해 보였나
 
-기존 guide는 정보가 전혀 없던 수준은 아니었지만, 학습 가이드로서 중요한 구조가 약했다.
+기존 개정본은 방향이 완전히 틀린 건 아니었지만, 원본 repo의 폭을 충분히 반영하지 못했다.
 
-특히 문제가 된 지점은 아래였다.
+### 부족했던 지점
 
-1. **frontdoor가 약했다**
-   - 무엇인지보다 기능 나열이 먼저 보였다.
-2. **학습 순서가 충분히 강하게 설계되지 않았다**
-   - 초심자가 어디부터 봐야 하는지 선명하지 않았다.
-3. **원본 docs와 source를 함께 읽은 흔적이 frontdoor에 충분히 드러나지 않았다**
-   - README만 본 요약처럼 읽힐 여지가 있었다.
-4. **중요한 드리프트 포인트가 구조적으로 정리되지 않았다**
-   - Team canonical surface, CLI-first worker 방향, package naming 차이 같은 핵심 혼동 포인트가 더 전면에 나와야 했다.
+1. **frontdoor가 너무 빨리 해석으로 들어갔다**
+   - Team / OpenClaw / hooks 해석은 있었지만
+   - repo의 전체 체격(`docs`, `src`, `benchmarks`, `missions`, `examples`)이 초반에 잘 안 보였다.
 
-그래서 이번에는 문장 손질보다 **문서 구조 재배치**를 우선했다.
+2. **drift 포인트를 더 세게 못 박았어야 했다**
+   - `README.md`: `32 specialized agents`
+   - `docs/ARCHITECTURE.md`: `19 specialized agents`
+   - `docs/ARCHITECTURE.md`: `31 skills total`
+   - `docs/MIGRATION.md`: `37 core skills`
+
+3. **독자 유형별 reading path가 덜 분기됐다**
+   - 사용자 / 운영자 / 통합 담당자 / 기여자 관점이 더 분리돼야 했다.
+
+4. **Obsidian live target 처리 절차가 안전하지 않았다**
+   - repo-local pack 작성과 live vault sync를 분리하지 않았고
+   - default-like 경로를 목적지로 오판했다.
+
+즉 문제는 문장력이 아니라 **작업 기준선**이었다.
 
 ---
 
@@ -48,37 +57,34 @@
 
 여기서 확인한 핵심:
 - Quick Start 흐름
-- Team이 canonical surface라는 현재 입장
-- tmux CLI workers (`omc team`) 강조
-- `/ccg`, `omc ask` 같은 multi-provider 표면
-- package naming note
+- Team canonical surface
+- `omc team` CLI-first runtime
+- `/ccg`, `omc ask`, OpenClaw integration
+- package naming 차이
+- README 기준의 current marketing/frontdoor 문구
 
 ### 2. `docs/MIGRATION.md`
 
 여기서 확인한 핵심:
-- legacy Team MCP runtime의 deprecation 맥락
-- `omc team` CLI-first 방향 강화
-- 과거/현재 표면 차이 정리
+- Team MCP runtime deprecation
+- `omc team` CLI-only 방향 강화
+- skill consolidation / rename history
+- 과거→현재 surface 이동
 
-### 3. `docs/REFERENCE.md`
-
-여기서 확인한 핵심:
-- installation/configuration 설명의 현재 기준
-- `omc ask`, `omc team`, session 관련 명령
-- state directory와 hooks, 환경 변수 맥락
-
-### 4. `docs/ARCHITECTURE.md`
+### 3. `docs/ARCHITECTURE.md`
 
 여기서 확인한 핵심:
-- hooks / skills / agents / state라는 시스템 설명 축
-- OMC를 “행동 주입 + 실행 + 상태 관리” 구조로 보는 관점
+- hooks / skills / agents / state의 4축 설명
+- agent lanes와 role boundaries
+- skill layering model
+- OMC를 orchestration architecture로 보는 틀
 
-### 5. `docs/OPENCLAW-ROUTING.md`
+### 4. `docs/OPENCLAW-ROUTING.md`
 
 여기서 확인한 핵심:
-- OpenClaw bridge payload 구조
-- `signal` 중심의 normalized routing contract
-- raw event보다 routeKey/priority를 중시하는 최근 방향
+- normalized `signal` contract
+- routeKey / priority 중심 라우팅
+- OpenClaw gateway payload shape
 
 ```mermaid
 flowchart LR
@@ -91,7 +97,13 @@ flowchart LR
     G --> H[External routing / automation]
 ```
 
-이 흐름은 OMC를 단순 프롬프트 세트가 아니라 **실행 이벤트를 바깥으로 연결하는 운영 런타임**으로 보게 만든다.
+### 5. `package.json`
+
+여기서 확인한 핵심:
+- version `4.9.3`
+- published package name `oh-my-claude-sisyphus`
+- `bin` entries: `oh-my-claudecode`, `omc`, `omc-cli`
+- `files` 목록을 통해 실제 배포 surface 확인
 
 ### 6. 실제 디렉터리 구조
 
@@ -105,97 +117,60 @@ flowchart LR
 - `src/openclaw/`
 - `src/notifications/`
 - `src/hud/`
-- `src/features/`
+- `benchmarks/`, `benchmark/`
+- `missions/`
+- `examples/`
 
-이 구조를 보면 OMC는 정말로 **프롬프트 모음보다 런타임 구조** 쪽이 더 본체에 가깝다.
+이 구조 때문에 OMC는 “설치 후 명령 몇 개 배우는 툴”보다 **운영 시스템 repo**로 읽는 편이 정확하다.
+
+---
+
+## 이번 개정에서 고친 것
+
+### 1. README frontdoor를 다시 세움
+
+이번에는 초반부터 아래를 보이게 했다.
+- repo 전체 체격
+- current 핵심 표면
+- drift 포인트
+- reader type별 reading path
+- benchmark/mission/observability까지 포함한 repo 성격
+
+### 2. upstream drift를 frontdoor 수준으로 끌어올림
+
+숨기지 않고, 학습자 혼동 포인트로 전면 배치했다.
+
+### 3. Obsidian 출력 상태를 안전하게 분리함
+
+현재 기준:
+- repo-local note pack만 정본으로 유지
+- live vault sync는 **보류**
+- 이유: intended vault target 미확인
+
+### 4. 재발방지 규칙을 guide-crafter 표준에 반영함
+
+핵심 규칙은 이것이다.
+
+> **default 값은 목적지가 아니다. live system write는 명시 확인 전 금지.**
 
 ---
 
 ## 학습자가 먼저 알아야 할 사실
 
 ### 1. Team이 중심이다
-
-지금 OMC를 배울 때는 Team을 중심축으로 잡아야 한다. 예전 표현이나 오래된 예제 기준으로 접근하면 학습 순서가 어긋난다.
+현재 OMC를 배울 때는 Team을 중심축으로 잡아야 한다.
 
 ### 2. `omc team`은 운영 레이어다
-
-Team을 다 안다고 해서 `omc team`까지 안다고 볼 수는 없다. `omc team`은 tmux pane에서 실제 CLI worker를 굴리는 운영자 표면이다.
+CLI worker runtime을 읽지 않으면 최신 OMC의 체감 구조를 놓친다.
 
 ### 3. OMC는 상태와 후처리를 가진 시스템이다
-
-`src/hooks/`, `.omc/`, artifacts, routing 문서를 보면, OMC는 단발성 명령보다 **지속 상태와 lifecycle 제어**에 더 큰 특징이 있다.
+hooks, replay, artifacts, notifications가 이를 증명한다.
 
 ### 4. OpenClaw는 부록이 아니다
+문서/소스/테스트가 분리되어 있는 공식 통합 레이어다.
 
-OpenClaw routing은 별도 문서와 소스 디렉터리가 존재할 만큼 명확한 통합 레이어다. 특히 외부 알림/자동화 흐름을 보는 사람에게는 핵심이다.
-
-### 5. package naming 차이는 반드시 초반에 짚어야 한다
-
-초심자 입장에서 가장 실수하기 쉬운 포인트다.
-
-- branding/repo/plugin: `oh-my-claudecode`
-- npm package: `oh-my-claude-sisyphus`
-
----
-
-## 추천 원본 읽기 순서
-
-### 빠른 이해용
-
-1. 원본 `README.md`
-2. 원본 `docs/MIGRATION.md`
-3. 원본 `docs/REFERENCE.md`
-
-### 구조 이해용
-
-1. 원본 `docs/ARCHITECTURE.md`
-2. 원본 `docs/OPENCLAW-ROUTING.md`
-3. `src/team/`
-4. `src/hooks/`
-5. `src/openclaw/`
-6. `src/notifications/`
-
-### 역할/표면 확인용
-
-1. `agents/`
-2. `skills/`
-3. `bridge/`
-
----
-
-## 이번에 재구성한 가이드 파일
-
-### `README.md`
-역할:
-- frontdoor 재구성
-- OMC의 정체, 차이점, 현재 중심 표면, 추천 읽기 순서를 빠르게 제시
-
-### `01-learning-paths.md`
-역할:
-- 입문 → orchestration → 운영 → 통합 → source reading 순으로 학습 흐름 고정
-
-### `02-glossary.md`
-역할:
-- `team`/`omc team`, skill/agent, runtime/state 같은 핵심 혼동 지점을 빠르게 해소
-
-### `sections/01-overview.md`
-역할:
-- 이번 guide가 어떤 근거와 판단 위에서 재작성되었는지 기록
-
----
-
-## 이 가이드가 목표로 한 개선점
-
-이번 재작성의 목표는 예쁘게 늘리는 게 아니라 아래 세 가지였다.
-
-1. **frontdoor를 강하게 만들기**
-   - 처음 들어온 사람이 “이게 뭐고 어디서 시작하는지”를 1~2분 안에 잡게 하기
-
-2. **학습 순서를 명확히 만들기**
-   - 기능 목록이 아니라 읽는 경로를 먼저 제시하기
-
-3. **repo-backed 설명으로 밀도 올리기**
-   - README, docs, src 구조가 서로 어떻게 맞물리는지 드러내기
+### 5. benchmark / mission / observability 축도 repo 정체의 일부다
+가이드에서 이 축을 빼면 원본보다 작게 보이게 된다.
 
 ---
 
@@ -204,6 +179,6 @@ OpenClaw routing은 별도 문서와 소스 디렉터리가 존재할 만큼 명
 이 overview를 읽고 나면 보통 다음 둘 중 하나로 가면 된다.
 
 - 학습 순서가 필요하면 → `../01-learning-paths.md`
-- 용어가 먼저 헷갈리면 → `../02-glossary.md`
+- 용어부터 헷갈리면 → `../02-glossary.md`
 
-그리고 그다음에 원본 README와 docs로 내려가면 된다.
+그리고 그다음에 원본 README + docs + src로 내려가면 된다.

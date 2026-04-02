@@ -35,6 +35,10 @@
 - `assets/diagrams/`
   - Mermaid source (`.mmd`) 파일 추가
   - Team pipeline sequence, `/team` vs `omc team`, repo reading map, hooks→OpenClaw routing 흐름도 추가
+- frontdoor/overview 재개정
+  - origin top-level breadth (`docs`, `src`, `benchmarks`, `missions`, `examples`)를 전면 반영
+  - upstream drift examples (`32 vs 19 agents`, `31 vs 37 skills`)를 명시
+  - Obsidian live vault target을 `unset`/`not applied` 상태로 되돌리고 repo-local pack 우선 원칙 명시
 - `OBSIDIAN-VAULT-MAP.md`
   - repo guide와 vault notes 간 대응 관계 기록
 - `obsidian/oh-my-claudecode Guide/`

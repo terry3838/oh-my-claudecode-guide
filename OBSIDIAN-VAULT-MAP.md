@@ -1,17 +1,24 @@
 # Obsidian Vault Map
 
-이 문서는 `oh-my-claudecode-guide`의 repo 문서를 Obsidian vault 노트와 어떻게 대응시키는지 정리한다.
+이 문서는 `oh-my-claudecode-guide`의 repo 문서를 Obsidian note pack과 어떻게 대응시키는지 정리한다.
 
 ## 출력 모드
 
 - mode: `hybrid`
 - repo guide: `/home/terry/guide/oh-my-claudecode-guide`
-- live vault target: `/home/terry/saju/oh-my-claudecode Guide`
 - repo-local note pack: `/home/terry/guide/oh-my-claudecode-guide/obsidian/oh-my-claudecode Guide`
+- live vault target: `unset`
+- live sync status: `not applied`
+
+## 안전 원칙
+
+- repo-local pack이 정본이다.
+- live vault sync는 **사용자가 의도한 vault target이 명시적으로 확인된 뒤에만** 수행한다.
+- `default vault`나 CLI 반환값은 참고 정보일 뿐, 목적지 확정 근거가 아니다.
 
 ## 매핑
 
-| repo guide | vault note |
+| repo guide | note pack |
 |---|---|
 | `README.md` | `oh-my-claudecode Guide/oh-my-claudecode Guide - MOC.md` |
 | `sections/01-overview.md` | `oh-my-claudecode Guide/01 Overview.md` |
