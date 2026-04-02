@@ -21,9 +21,12 @@ OMC를 명령어 묶음이 아니라 **운영 런타임**으로 보게 만드는
 
 ```mermaid
 flowchart LR
-    A[hook event] --> B[state/artifact update]
-    B --> C[notification]
-    C --> D[OpenClaw signal routing]
+    A[hook event] --> B[skill / mode injection]
+    B --> C[state update]
+    C --> D[artifacts / sessions / replay]
+    C --> E[notification]
+    E --> F[OpenClaw bridge]
+    F --> G[normalized signal payload]
 ```
 
 ## 같이 읽을 노트

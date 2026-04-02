@@ -1,0 +1,8 @@
+flowchart LR
+    A[Hook event] --> B[Skill / mode injection]
+    B --> C[State update]
+    C --> D[Artifacts / sessions / replay]
+    C --> E[Notifications]
+    E --> F[OpenClaw bridge]
+    F --> G[Normalized signal payload]
+    G --> H[External routing / automation]

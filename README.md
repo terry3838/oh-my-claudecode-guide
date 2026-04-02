@@ -130,9 +130,51 @@ team-plan → team-prd → team-exec → team-verify → team-fix (loop)
 즉 `/team`은 학습자에게 보이는 orchestration 표면이고,
 `omc team`은 운영자가 보는 CLI runtime 표면에 가깝다.
 
+```mermaid
+flowchart LR
+    subgraph A[/team]
+        A1[canonical orchestration surface]
+        A2[shared task lifecycle]
+        A3[plan → prd → exec → verify → fix]
+        A4[learner-facing mental model]
+    end
+
+    subgraph B[omc team]
+        B1[tmux CLI runtime surface]
+        B2[real claude/codex/gemini workers]
+        B3[start / status / shutdown / api]
+        B4[operator-facing mental model]
+    end
+
+    A <--> B
+```
+
 ### 3. Ralph는 “대충 됨”을 허용하지 않는 완료 집착 모드다
 
 Ralph는 단순 자동 실행이 아니라 **verify/fix 반복을 전제로 한 persistent mode**로 이해해야 한다.
+
+### Team pipeline 시퀀스
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant T as Team Surface
+    participant P as team-plan
+    participant R as team-prd
+    participant E as team-exec
+    participant V as team-verify
+    participant F as team-fix
+
+    U->>T: /team N:role "task"
+    T->>P: clarify goal and break work down
+    P->>R: pass scoped plan
+    R->>E: pass acceptance criteria + execution scope
+    E->>V: implementation result
+    V-->>F: issues found
+    F->>V: revised result
+    V-->>T: verified complete
+    T-->>U: final completion state
+```
 
 ### 4. OMC는 단순 명령어 모음이 아니라 상태를 가진 운영 체계다
 
@@ -226,6 +268,37 @@ autopilot: build a REST API for managing tasks
 ---
 
 ## 원본 repo를 읽을 때 핵심 디렉터리
+
+### Repo reading map
+
+```mermaid
+flowchart TD
+    A[oh-my-claudecode repo] --> B[README.md]
+    A --> C[docs/]
+    A --> D[agents/]
+    A --> E[skills/]
+    A --> F[bridge/]
+    A --> G[src/team/]
+    A --> H[src/hooks/]
+    A --> I[src/openclaw/]
+    A --> J[src/notifications/]
+    A --> K[src/hud/]
+
+    C --> C1[MIGRATION]
+    C --> C2[REFERENCE]
+    C --> C3[ARCHITECTURE]
+    C --> C4[OPENCLAW-ROUTING]
+
+    B --> L[frontdoor understanding]
+    C --> M[concept + drift understanding]
+    G --> N[team runtime reality]
+    H --> O[lifecycle injection]
+    I --> P[integration reality]
+    J --> Q[delivery / callback reality]
+```
+
+이 다이어그램은 “파일이 많다”가 아니라 **어디를 읽으면 무엇을 이해하게 되는가**를 보여준다.
+
 
 | 경로 | 왜 중요한가 |
 |---|---|

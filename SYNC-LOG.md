@@ -34,6 +34,7 @@
   - 재작성 근거, upstream evidence, 문서 판단 기록 강화
 - `assets/diagrams/`
   - Mermaid source (`.mmd`) 파일 추가
+  - Team pipeline sequence, `/team` vs `omc team`, repo reading map, hooks→OpenClaw routing 흐름도 추가
 - `OBSIDIAN-VAULT-MAP.md`
   - repo guide와 vault notes 간 대응 관계 기록
 - `obsidian/oh-my-claudecode Guide/`

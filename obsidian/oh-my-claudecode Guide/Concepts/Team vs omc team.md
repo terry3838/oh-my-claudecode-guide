@@ -23,6 +23,19 @@
 team-plan → team-prd → team-exec → team-verify → team-fix
 ```
 
+```mermaid
+flowchart LR
+    subgraph A[/team]
+        A1[canonical orchestration]
+        A2[pipeline lifecycle]
+    end
+    subgraph B[omc team]
+        B1[tmux runtime]
+        B2[real CLI workers]
+    end
+    A <--> B
+```
+
 ## 같이 읽을 노트
 
 - [[02 Learning Paths]]

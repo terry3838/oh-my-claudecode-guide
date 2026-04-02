@@ -22,6 +22,21 @@
 - `src/hud/`
 - `src/features/`
 
+## repo reading map
+
+```mermaid
+flowchart TD
+    A[oh-my-claudecode repo] --> B[README.md]
+    A --> C[docs/]
+    A --> D[agents/]
+    A --> E[skills/]
+    A --> F[bridge/]
+    A --> G[src/team/]
+    A --> H[src/hooks/]
+    A --> I[src/openclaw/]
+    A --> J[src/notifications/]
+```
+
 ## 읽는 질문
 
 - Team pipeline은 코드에서 어디에 있나?

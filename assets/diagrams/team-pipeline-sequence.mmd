@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant U as User
+    participant T as Team Surface
+    participant P as team-plan
+    participant R as team-prd
+    participant E as team-exec
+    participant V as team-verify
+    participant F as team-fix
+
+    U->>T: /team N:role "task"
+    T->>P: clarify goal and break work down
+    P->>R: pass scoped plan
+    R->>E: pass acceptance criteria + execution scope
+    E->>V: implementation result
+    V-->>F: issues found
+    F->>V: revised result
+    V-->>T: verified complete
+    T-->>U: final completion state

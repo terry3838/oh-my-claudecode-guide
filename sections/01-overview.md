@@ -80,6 +80,19 @@
 - `signal` 중심의 normalized routing contract
 - raw event보다 routeKey/priority를 중시하는 최근 방향
 
+```mermaid
+flowchart LR
+    A[Hook event] --> B[Skill / mode injection]
+    B --> C[State update]
+    C --> D[Artifacts / sessions / replay]
+    C --> E[Notifications]
+    E --> F[OpenClaw bridge]
+    F --> G[Normalized signal payload]
+    G --> H[External routing / automation]
+```
+
+이 흐름은 OMC를 단순 프롬프트 세트가 아니라 **실행 이벤트를 바깥으로 연결하는 운영 런타임**으로 보게 만든다.
+
 ### 6. 실제 디렉터리 구조
 
 직접 확인한 핵심 폴더:
