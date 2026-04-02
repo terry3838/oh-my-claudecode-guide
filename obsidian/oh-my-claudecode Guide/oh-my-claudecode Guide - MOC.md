@@ -26,8 +26,10 @@ Its job is to help you:
 2. [[02 Learning Paths]]
 3. [[03 Glossary]]
 4. [[Concepts/Team vs omc team]]
-5. [[Concepts/Hooks and State]]
-6. [[References/Source Map]]
+5. [[Concepts/Team Runtime Deep Dive]]
+6. [[Concepts/Hooks and State]]
+7. [[Concepts/OpenClaw and Observability]]
+8. [[References/Source Map]]
 
 ## Reading graph
 
@@ -36,8 +38,10 @@ flowchart LR
     A[[01 Overview]] --> B[[02 Learning Paths]]
     B --> C[[03 Glossary]]
     C --> D[[Concepts/Team vs omc team]]
-    D --> E[[Concepts/Hooks and State]]
-    E --> F[[References/Source Map]]
+    D --> E[[Concepts/Team Runtime Deep Dive]]
+    E --> F[[Concepts/Hooks and State]]
+    F --> G[[Concepts/OpenClaw and Observability]]
+    G --> H[[References/Source Map]]
 ```
 
 ## Note map by purpose
@@ -49,7 +53,9 @@ flowchart LR
 
 ### Concepts
 - [[Concepts/Team vs omc team]]
+- [[Concepts/Team Runtime Deep Dive]]
 - [[Concepts/Hooks and State]]
+- [[Concepts/OpenClaw and Observability]]
 
 ### Workflows
 - [[Workflows/Recommended Reading Flow]]

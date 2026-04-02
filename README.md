@@ -320,6 +320,8 @@ flowchart TD
 - 학습 순서가 필요하면 → [`01-learning-paths.md`](01-learning-paths.md)
 - 용어부터 정리하려면 → [`02-glossary.md`](02-glossary.md)
 - 이번 가이드가 어떤 근거로 재구성됐는지 보려면 → [`sections/01-overview.md`](sections/01-overview.md)
+- Team runtime을 source 기준으로 더 깊게 보려면 → [`sections/02-team-runtime-and-worker-model.md`](sections/02-team-runtime-and-worker-model.md)
+- hooks / OpenClaw / HUD / replay 축을 source 기준으로 보려면 → [`sections/03-hooks-openclaw-and-observability.md`](sections/03-hooks-openclaw-and-observability.md)
 - upstream 기준점과 sync 기록을 보려면 → [`UPSTREAM-SNAPSHOT.md`](UPSTREAM-SNAPSHOT.md), [`SYNC-LOG.md`](SYNC-LOG.md)
 
 ---

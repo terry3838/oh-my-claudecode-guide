@@ -47,6 +47,10 @@
   - `UPSTREAM-SNAPSHOT.md`를 drift-aware executive snapshot 형태로 재작성
   - Obsidian MOC, Overview, Concepts, Source Map를 runtime / integration / observability 기준으로 재구성
   - note graph에서 README frontdoor, migration, runtime, integration, observability 연결이 더 선명하게 보이도록 정리
+- source-backed deep-dive 섹션 추가
+  - `sections/02-team-runtime-and-worker-model.md`에서 `src/team/`의 runtime-v2 / runtime-cli / tmux / monitor / governance 구조를 설명
+  - `sections/03-hooks-openclaw-and-observability.md`에서 `src/hooks/`, `src/openclaw/`, `src/hud/`를 묶어 runtime 성격을 설명
+  - Obsidian concepts에 `Team Runtime Deep Dive`, `OpenClaw and Observability` 노트를 추가해 deep-reading 경로를 강화
 - `OBSIDIAN-VAULT-MAP.md`
   - repo guide와 vault notes 간 대응 관계 기록
 - `obsidian/oh-my-claudecode Guide/`

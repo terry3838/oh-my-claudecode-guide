@@ -26,7 +26,9 @@
 | `02-glossary.md` | `oh-my-claudecode Guide/03 Glossary.md` |
 | repo 구조 설명 | `oh-my-claudecode Guide/References/Source Map.md` |
 | Team 핵심 개념 | `oh-my-claudecode Guide/Concepts/Team vs omc team.md` |
+| Team runtime deep dive | `oh-my-claudecode Guide/Concepts/Team Runtime Deep Dive.md` |
 | hooks/state 핵심 개념 | `oh-my-claudecode Guide/Concepts/Hooks and State.md` |
+| OpenClaw/observability deep dive | `oh-my-claudecode Guide/Concepts/OpenClaw and Observability.md` |
 | 읽기 절차 | `oh-my-claudecode Guide/Workflows/Recommended Reading Flow.md` |
 
 ## note map 의도
