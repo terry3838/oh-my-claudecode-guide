@@ -43,6 +43,10 @@
   - 사용자 / 운영자 / 통합 담당자 / 기여자 기준 reading track 분리
   - runtime / observability / benchmark / mission 관점을 학습 경로에 포함
   - 용어집을 층위 구분 중심(agent vs skill, command vs runtime, hook event vs signal)으로 재정비
+- upstream snapshot / Obsidian note graph 강화
+  - `UPSTREAM-SNAPSHOT.md`를 drift-aware executive snapshot 형태로 재작성
+  - Obsidian MOC, Overview, Concepts, Source Map를 runtime / integration / observability 기준으로 재구성
+  - note graph에서 README frontdoor, migration, runtime, integration, observability 연결이 더 선명하게 보이도록 정리
 - `OBSIDIAN-VAULT-MAP.md`
   - repo guide와 vault notes 간 대응 관계 기록
 - `obsidian/oh-my-claudecode Guide/`

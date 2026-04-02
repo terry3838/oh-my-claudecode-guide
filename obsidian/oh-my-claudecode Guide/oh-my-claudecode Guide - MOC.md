@@ -5,17 +5,22 @@
 > repo guide: `/home/terry/guide/oh-my-claudecode-guide`  
 > upstream basis: `fae376508355fb03ea6a2477453f37f0a59e707f`
 
-## 이것은 무엇인가
+## What this vault set is for
 
-OMC(oh-my-claudecode)를 **학습자 기준**으로 다시 정리한 Obsidian frontdoor 노트다.
+This note set turns OMC into a vault-native learning surface.
 
-이 노트의 목표는 네 가지다.
-- OMC가 무엇인지 빠르게 잡기
-- 어디서부터 읽어야 하는지 정해주기
-- repo guide와 vault notes를 연결하기
-- 개념/워크플로우/레퍼런스를 분리해 재사용 가능하게 만들기
+Its job is to help you:
+- identify what OMC really is
+- find the right reading order fast
+- separate orchestration from runtime
+- separate runtime from integration
+- keep repo evidence attached to your study notes
 
-## 어디서 시작할까
+## One-line summary
+
+**OMC is best understood as a Claude Code orchestration runtime with Team, tmux CLI workers, hooks/state, observability, and OpenClaw routing.**
+
+## Start here
 
 1. [[01 Overview]]
 2. [[02 Learning Paths]]
@@ -24,11 +29,7 @@ OMC(oh-my-claudecode)를 **학습자 기준**으로 다시 정리한 Obsidian fr
 5. [[Concepts/Hooks and State]]
 6. [[References/Source Map]]
 
-## 한 줄 요약
-
-**OMC는 Claude Code 위에 Team orchestration, persistent execution, tmux CLI workers, hooks/state, OpenClaw routing을 얹는 운영 런타임이다.**
-
-## 추천 읽기 순서
+## Reading graph
 
 ```mermaid
 flowchart LR
@@ -39,7 +40,7 @@ flowchart LR
     E --> F[[References/Source Map]]
 ```
 
-## 노트 맵
+## Note map by purpose
 
 ### Frontdoor
 - [[01 Overview]]
@@ -56,7 +57,18 @@ flowchart LR
 ### References
 - [[References/Source Map]]
 
-## repo guide 연결
+## What to keep in mind while reading
+
+> [!warning]
+> README, Migration, Architecture, and Reference do not always expose the exact same counts or emphasis. Read them as different surfaces, not as perfectly synchronized copies.
+
+Key drift examples:
+- agent count mismatch across docs
+- skill count mismatch across docs
+- install-path wording mismatch across docs
+- Team current surface vs migration/deprecation wording
+
+## Repo guide links
 
 - repo frontdoor: `/home/terry/guide/oh-my-claudecode-guide/README.md`
-- repo ↔ vault mapping: `/home/terry/guide/oh-my-claudecode-guide/OBSIDIAN-VAULT-MAP.md`
+- repo ↔ note mapping: `/home/terry/guide/oh-my-claudecode-guide/OBSIDIAN-VAULT-MAP.md`

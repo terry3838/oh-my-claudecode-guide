@@ -1,174 +1,207 @@
 # Upstream Snapshot — oh-my-claudecode
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
+- guide repo: `oh-my-claudecode-guide`
 - previous synced commit: `fae376508355fb03ea6a2477453f37f0a59e707f`
 - current synced commit: `fae376508355fb03ea6a2477453f37f0a59e707f`
 - sync mode: `no-change`
-- impact labels: 일반 변경
-- guide repo: `oh-my-claudecode-guide`
-
-## 원본 한줄 요약
-
-English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](README.ja.md) | [Español](README.es.md) | [Tiếng Việt](README.vi.md) | [Português](README.pt.md)
-
-## recent upstream commits
-
-- `fae37650 chore: update Discord invite link to OmO (Ultraworkers) server`
-- `0ec792c0 chore: gitignore release-body.md to prevent stale release notes`
-- `f93e27bc fix(release): add version sync hook + fix stale release body`
-- `8660d291 fix(ci): sync version markers to 4.9.3`
-- `884ec78d chore: bump version to 4.9.3`
-- `f9bbb99e Merge remote-tracking branch 'origin/dev'`
-- `cc71a7db Merge pull request #1982 from riftzen-bit/fix/outbox-reader-partial-lines`
-- `88d6a044 Merge pull request #1981 from riftzen-bit/fix/team-status-tmux-provider`
-
-## top-level structure
-
-- `.claude-plugin/`
-- `.eslintignore`
-- `.mcp.json`
-- `.npmignore`
-- `agents/`
-- `AGENTS.md`
-- `assets/`
-- `benchmark/`
-- `benchmarks/`
-- `bridge/`
-- `CHANGELOG.md`
-- `CLAUDE.md`
-- `dist/`
-- `docs/`
-- `eslint.config.js`
-- `examples/`
-- `hooks/`
-- `LICENSE`
-- `missions/`
-- `package-lock.json`
-
-## changed files
-
-- 변경 파일 없음
-
-## README excerpt
-
-```md
-English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](README.ja.md) | [Español](README.es.md) | [Tiếng Việt](README.vi.md) | [Português](README.pt.md)
-
-# oh-my-claudecode
-
-[![npm version](https://img.shields.io/npm/v/oh-my-claude-sisyphus?color=cb3837)](https://www.npmjs.com/package/oh-my-claude-sisyphus)
-[![npm downloads](https://img.shields.io/npm/dm/oh-my-claude-sisyphus?color=blue)](https://www.npmjs.com/package/oh-my-claude-sisyphus)
-[![GitHub stars](https://img.shields.io/github/stars/Yeachan-Heo/oh-my-claudecode?style=flat&color=yellow)](https://github.com/Yeachan-Heo/oh-my-claudecode/stargazers)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Sponsor](https://img.shields.io/badge/Sponsor-❤️-red?style=flat&logo=github)](https://github.com/sponsors/Yeachan-Heo)
-[![Discord](https://img.shields.io/discord/1452487457085063218?color=5865F2&logo=discord&logoColor=white&label=Discord)](https://discord.gg/PUwSMR9XNk)
-
-> **For Codex users:** Check out [oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) — the same orchestration experience for OpenAI Codex CLI.
-
-**Multi-agent orchestration for Claude Code. Zero learning curve.**
-
-_Don't learn Claude Code. Just use OMC._
-
-[Get Started](#quick-start) • [Documentation](https://yeachan-heo.github.io/oh-my-claudecode-website) • [CLI Reference](https://yeachan-heo.github.io/oh-my-claudecode-website/docs.html#cli-reference) • [Workflows](https://yeachan-heo.github.io/oh-my-claudecode-website/docs.html#workflows) • [Migration Guide](docs/MIGRATION.md) • [Discord](https://discord.gg/PUwSMR9XNk)
+- impact labels: `docs drift awareness`, `team runtime`, `OpenClaw integration`, `observability`
 
 ---
 
-## Quick Start
+## Executive read
 
-**Step 1: Install**
+이번 snapshot의 핵심은 “업스트림이 크게 변했다”가 아니라,
+**현재 OMC를 설명할 때 어떤 축을 전면에 둬야 하는지 더 분명해졌다**는 것이다.
 
-Marketplace/plugin install (recommended for most Claude Code users):
+즉 변경 파일은 없더라도, 학습 가이드 관점에서 중요한 해석 포인트는 분명하다.
 
-```bash
-/plugin marketplace add https://github.com/Yeachan-Heo/oh-my-claudecode
-/plugin install oh-my-claudecode
-```
+### 지금 기준의 핵심 4축
 
-If you prefer the npm CLI/runtime path instead of the marketplace flow:
+1. **Team이 canonical orchestration surface다**
+2. **`omc team`은 tmux CLI worker runtime이다**
+3. **OpenClaw는 공식 signal-based integration surface다**
+4. **OMC는 observability / state / replay까지 가진 운영 런타임이다**
 
-```bash
-npm i -g oh-my-claude-sisyphus@latest
-```
+---
 
-**Step 2: Setup**
+## Upstream one-line summary
 
-```bash
-/setup
-/omc-setup
-```
+**oh-my-claudecode is no longer best explained as a bag of commands; it is better explained as a Claude Code orchestration runtime with Team, CLI workers, hooks/state, observability, and OpenClaw routing.**
 
-**Step 3: Build something**
+---
 
-```
-autopilot: build a REST API for managing tasks
-```
+## Why this snapshot matters
 
-That's it. Everything else is automatic.
+### 1. README frontdoor is not the whole repo
 
-### Not Sure Where to Start?
+원본 README는 훌륭한 frontdoor이지만, repo 전체를 대표하진 않는다.
 
-If you're uncertain about requirements, have a vague idea, or want to micromanage the design:
+실제로는 아래 축을 같이 봐야 한다.
+- `docs/`
+- `agents/`
+- `skills/`
+- `bridge/`
+- `src/team/`
+- `src/hooks/`
+- `src/openclaw/`
+- `src/hud/`
+- `benchmarks/`, `benchmark/`
+- `missions/`
 
-```
-/deep-interview "I want to build a task management app"
-```
+즉 snapshot은 단순 최신 커밋 기록이 아니라,
+**guide가 upstream을 얼마나 넓게 읽어야 하는지 보여주는 증거**다.
 
-The deep interview uses Socratic questioning to clarify your thinking before any code is written. It exposes hidden assumptions and measures clarity across weighted dimensions, ensuring you know exactly what to build before execution begins.
+### 2. current surface and historical surface both matter
 
-## Team Mode (Recommended)
+현재 권장 경로를 알려면 README만 보면 안 되고,
+왜 지금 이렇게 됐는지 이해하려면 `docs/MIGRATION.md`도 같이 봐야 한다.
 
-Starting in **v4.1.7**, **Team** is the canonical orchestration surface in OMC. The legacy `swarm` keyword/skill has been removed; use `team` directly.
+대표 예시:
+- Team canonical surface 강조
+- legacy Team MCP runtime deprecation
+- `omc team` CLI-first direction 강화
 
-```bash
-/team 3:executor "fix all TypeScript errors"
-```
+### 3. observability is part of product reality
 
-Team runs as a staged pipeline:
+`docs/PERFORMANCE-MONITORING.md`와 `src/hud/`를 보면,
+OMC는 단순 실행 도구가 아니라 **실행 관찰 도구**이기도 하다.
 
-`team-plan → team-prd → team-exec → team-verify → team-fix (loop)`
+즉 snapshot 해석에 아래를 포함해야 한다.
+- Agent Observatory
+- Session Replay
+- Session-end summaries
+- HUD preset
 
-Enable Claude Code native teams in `~/.claude/settings.json`:
+---
 
-```json
-{
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
-  }
-}
-```
+## Most important upstream evidence used
 
-> If teams are disabled, OMC will warn you and fall back to non-team execution where possible.
+### A. `README.md`
 
-### tmux CLI Workers — Codex & Gemini (v4.4.0+)
+확인 포인트:
+- Quick Start
+- Team canonical surface
+- tmux CLI workers
+- `/ccg` and `omc ask`
+- OpenClaw integration overview
+- package naming note
 
-**v4.4.0 removes the Codex/Gemini MCP servers** (`x`, `g` providers). Use the CLI-first Team runtime (`omc team ...`) to spawn real tmux worker panes:
+### B. `docs/MIGRATION.md`
 
-```bash
-omc team 2:codex "review auth module for security issues"
-omc team 2:gemini "redesign UI components for accessibility"
-omc team 1:claude "implement the payment flow"
-omc team status auth-review
-omc team shutdown auth-review
-```
+확인 포인트:
+- Team MCP runtime deprecation
+- CLI-first migration direction
+- surface rename / consolidation history
 
-`/omc-teams` remains as a legacy compatibility skill and now routes to `omc team ...`.
+### C. `docs/REFERENCE.md`
 
-For mixed Codex + Gemini work in one command, use the **`/ccg`** skill (routes via `/ask codex` + `/ask gemini`, then Claude synthesizes):
+확인 포인트:
+- installation/configuration guidance
+- `omc ask`, `omc team`, session commands
+- state directory / env vars / hooks
+- reference-side counts and current support wording
 
-```bash
-/ccg Review this PR — architecture (Codex) and UI components (Gemini)
-```
+### D. `docs/ARCHITECTURE.md`
 
-| Surface                   | Workers            | Best For                                     |
-| ------------------------- | ------------------ | -------------------------------------------- |
-| `omc team N:codex "..."`  | N Codex CLI panes  | Code review, security analysis, architecture |
-| `omc team N:gemini "..."` | N Gemini CLI panes | UI/UX design, docs, large-context tasks      |
-| `omc team N:claude "..."` | N Claude CLI panes | General tasks via Claude CLI in tmux         |
-| `/ccg`                    | /ask codex + /ask gemini | Tri-model advisor synthesis           |
+확인 포인트:
+- hooks / skills / agents / state 4-part model
+- skill layering
+- agent lane explanation
 
-Workers spawn on-demand and die when their task completes — no idle resource usage. Requires `codex` / `gemini` CLIs installed and an active tmux session.
+### E. `docs/OPENCLAW-ROUTING.md`
 
-> **Note: Package naming** — The project is branded as **oh-my-claudecode** (repo, plugin, commands), but the npm package is published as [`oh-my-claude-sisyphus`](https://www.npmjs.com/package/oh-my-claude-sisyphus). If you install or upgrade the CLI tools via npm/bun, use `npm i -g oh-my-claude-sisyphus@latest`.
+확인 포인트:
+- normalized `signal` contract
+- `routeKey`, `priority`, `phase`
+- OpenClaw payload shape
 
-### Updating
-```
+### F. `docs/PERFORMANCE-MONITORING.md`
+
+확인 포인트:
+- Agent Observatory
+- Session Replay
+- session-end summary / HUD guidance
+- live/runtime inspection posture
+
+---
+
+## Drift and ambiguity to keep visible
+
+좋은 가이드는 아래 차이를 숨기지 않아야 한다.
+
+| Topic | Evidence | Guide implication |
+|---|---|---|
+| Agent count | README: `32 specialized agents` / Architecture: `19 specialized agents` | 문서 기준선이 하나로 고정돼 있지 않다 |
+| Skill count | Reference: `32 total` / Architecture: `31 total` / Migration: `37 core skills` | 버전대/문맥별 count mismatch를 밝히고 읽어야 한다 |
+| Install guidance | README shows plugin + npm path / Reference says plugin-only supported | 학습자에게 “현재 권장 경로”와 “역사적/보조 경로”를 분리해 설명해야 한다 |
+| Team runtime | README explains current surface / Migration explains deprecation and CLI-only shift | current reality는 둘을 같이 봐야 선명해진다 |
+
+---
+
+## Recent upstream commits
+
+최근 커밋은 대규모 구조 변경이라기보다 현재 라인을 정리하는 성격이 강하다.
+
+- `fae37650` — chore: update Discord invite link to OmO (Ultraworkers) server
+- `0ec792c0` — chore: gitignore release-body.md to prevent stale release notes
+- `f93e27bc` — fix(release): add version sync hook + fix stale release body
+- `8660d291` — fix(ci): sync version markers to 4.9.3
+- `884ec78d` — chore: bump version to 4.9.3
+- `cc71a7db` — fix: outbox reader partial lines
+- `88d6a044` — fix: team-status tmux provider
+
+### snapshot reading
+
+이 커밋 목록이 시사하는 건 이쪽이다.
+- Team/tmux runtime 안정화가 실제 유지보수 축이다.
+- release/version consistency도 중요하게 다뤄진다.
+- 문서/배포/운영 모두를 다루는 repo라는 사실이 계속 유지된다.
+
+---
+
+## Top-level structure that matters for guides
+
+- `.claude-plugin/`
+- `.mcp.json`
+- `agents/`
+- `benchmark/`
+- `benchmarks/`
+- `bridge/`
+- `docs/`
+- `examples/`
+- `hooks/`
+- `missions/`
+- `src/`
+
+### guide implication
+
+guide는 최소한 다음을 동시에 반영해야 한다.
+- frontdoor usage
+- architecture explanation
+- runtime / operator surfaces
+- integration surfaces
+- observability / evaluation posture
+
+---
+
+## What changed in the guide because of this snapshot
+
+이번 snapshot 해석을 반영해서 guide는 아래 방향으로 강화됐다.
+
+1. `README.md` frontdoor를 repo breadth 중심으로 다시 세움
+2. `01-learning-paths.md`를 reader-track 기반으로 재구성
+3. `02-glossary.md`를 층위 구분 중심으로 재구성
+4. OpenClaw / runtime / observability를 부록이 아니라 핵심 축으로 끌어올림
+5. drift examples를 숨기지 않고 전면 배치
+
+---
+
+## Snapshot judgment
+
+현재 upstream 기준으로 가장 정확한 판단은 이거다.
+
+> **OMC는 Claude Code용 멀티 에이전트 orchestration runtime이며, 지금 읽어야 할 중심축은 Team, tmux CLI workers, hooks/state, observability, and OpenClaw routing이다.**
+
+변경 파일이 없더라도,
+이 판단은 guide 품질을 끌어올리는 데 충분히 중요한 snapshot이다.
