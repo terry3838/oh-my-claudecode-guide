@@ -5,8 +5,8 @@
 ## 출력 모드
 
 - mode: `hybrid`
-- repo guide: `/home/terry/guide/oh-my-claudecode-guide`
-- repo-local note pack: `/home/terry/guide/oh-my-claudecode-guide/obsidian/oh-my-claudecode Guide`
+- repo guide: `oh-my-claudecode-guide/`
+- repo-local note pack: `obsidian/oh-my-claudecode Guide/`
 - live vault target: `unset`
 - live sync status: `not applied`
 

@@ -67,7 +67,7 @@ OMC를 README의 멋진 키워드 몇 개로만 보면:
 
 ### top-level에서 바로 보이는 것
 
-원본 `/home/terry/guide/origin/oh-my-claudecode`를 기준으로, 초반부터 눈에 띄는 축은 이렇다.
+원본 `oh-my-claudecode` 저장소를 기준으로, 초반부터 눈에 띄는 축은 이렇다.
 
 | 경로 | 이게 말해주는 것 |
 |---|---|

@@ -2,7 +2,7 @@
 
 > [!info]
 > output mode: hybrid  
-> repo guide: `/home/terry/guide/oh-my-claudecode-guide`  
+> repo guide: `oh-my-claudecode-guide/`  
 > upstream basis: `fae376508355fb03ea6a2477453f37f0a59e707f`
 
 ## What this vault set is for
@@ -76,5 +76,5 @@ Key drift examples:
 
 ## Repo guide links
 
-- repo frontdoor: `/home/terry/guide/oh-my-claudecode-guide/README.md`
-- repo ↔ note mapping: `/home/terry/guide/oh-my-claudecode-guide/OBSIDIAN-VAULT-MAP.md`
+- repo frontdoor: `README.md`
+- repo ↔ note mapping: `OBSIDIAN-VAULT-MAP.md`

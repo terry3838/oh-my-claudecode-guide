@@ -147,7 +147,7 @@ flowchart LR
 - live vault sync는 **보류**
 - 이유: intended vault target 미확인
 
-### 4. 재발방지 규칙을 guide-crafter 표준에 반영함
+### 4. 재발방지 규칙을 작업 표준에 반영함
 
 핵심 규칙은 이것이다.
 
