@@ -31,6 +31,29 @@ OMC는 표면이 많다. `autopilot`, `team`, `ralph`, `omc team`, hooks, HUD, O
 | 4단계. 확장/통합 | hooks와 OpenClaw는 어디에 붙지? | 시스템 확장 포인트를 이해한다 |
 | 5단계. 기여/분석 | 실제 구현은 어디를 읽어야 하지? | src 구조를 기반으로 source reading이 가능해진다 |
 
+### Mermaid 로 보는 학습 순서 맵
+
+```mermaid
+flowchart LR
+    A[1. 입문] --> B[2. Team 중심 사용법]
+    B --> C[3. 운영 관점]
+    C --> D[4. 확장/통합]
+    D --> E[5. Source Reading]
+    A --> A1[README]
+    A --> A2[package naming]
+    B --> B1[/team]
+    B --> B2[ralph]
+    C --> C1[omc team]
+    C --> C2[HUD/.omc]
+    D --> D1[hooks]
+    D --> D2[OpenClaw]
+    E --> E1[src/team]
+    E --> E2[src/hooks]
+    E --> E3[src/openclaw]
+```
+
+이 맵은 “무슨 기능이 많다”보다 **무슨 순서로 이해해야 덜 헷갈리는가**를 보여준다.
+
 ---
 
 ## 1단계 — 입문: OMC를 한 문장으로 설명할 수 있게 만들기

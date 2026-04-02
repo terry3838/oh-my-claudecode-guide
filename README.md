@@ -40,6 +40,37 @@
 - Codex / Gemini / Claude를 섞는 **멀티 모델 운영**에 관심 있는 사람
 - hooks, tmux, OpenClaw까지 포함한 **실전 운영 레이어**를 이해하고 싶은 사람
 
+### OMC 구조를 한눈에 보는 시스템 맵
+
+```mermaid
+flowchart TD
+    A[Claude Code] --> B[OMC Runtime]
+    B --> C[Autopilot]
+    B --> D[Team Pipeline]
+    B --> E[Ralph]
+    B --> F[Hooks & State]
+    B --> G[Notifications]
+    D --> D1[team-plan]
+    D --> D2[team-prd]
+    D --> D3[team-exec]
+    D --> D4[team-verify]
+    D --> D5[team-fix]
+    B --> H[omc team]
+    H --> H1[tmux Claude workers]
+    H --> H2[tmux Codex workers]
+    H --> H3[tmux Gemini workers]
+    F --> F1[.omc sessions]
+    F --> F2[artifacts]
+    F --> F3[replay/state]
+    G --> I[OpenClaw routing]
+```
+
+이 다이어그램이 답하는 질문은 하나다.
+
+> **OMC는 어디에 힘을 쓰는가?**
+
+답은 단순하다. 단일 명령 추가가 아니라, **실행을 조직하고 상태를 유지하며 바깥 시스템으로 연결하는 런타임** 쪽에 힘을 쓴다.
+
 ---
 
 ## 버전 기준과 확인 범위
@@ -226,6 +257,39 @@ autopilot: build a REST API for managing tasks
 입문은 뒤로 미뤄도 되지만, OMC의 정체를 이해하려면 결국 봐야 한다. OMC를 운영 체계로 만드는 핵심이 바로 이 레이어다.
 
 ---
+
+## Obsidian companion pack
+
+이 가이드는 repo 문서만으로 끝내지 않고, **Obsidian vault에서 바로 공부할 수 있는 hybrid 출력**도 같이 만든다.
+
+### 생성한 vault 대상
+
+- live vault path: `/home/terry/saju`
+- live guide note root: `/home/terry/saju/oh-my-claudecode Guide`
+- repo-local note pack: `obsidian/oh-my-claudecode Guide/`
+
+### 만들어 둔 note 구조
+
+```text
+oh-my-claudecode Guide/
+├── oh-my-claudecode Guide - MOC.md
+├── 01 Overview.md
+├── 02 Learning Paths.md
+├── 03 Glossary.md
+├── Concepts/
+│   ├── Team vs omc team.md
+│   └── Hooks and State.md
+├── Workflows/
+│   └── Recommended Reading Flow.md
+└── References/
+    └── Source Map.md
+```
+
+### repo ↔ vault 매핑 문서
+
+- [`OBSIDIAN-VAULT-MAP.md`](OBSIDIAN-VAULT-MAP.md)
+
+이렇게 두면 저장소 문서는 배포/버전관리용으로 쓰고, Obsidian 쪽은 **개인 학습/복습/링크 탐색용**으로 바로 사용할 수 있다.
 
 ## 다음에 무엇을 읽으면 좋은가
 

@@ -5,7 +5,7 @@
 - previous source sha: `fae376508355fb03ea6a2477453f37f0a59e707f`
 - current source sha: `fae376508355fb03ea6a2477453f37f0a59e707f`
 - mode: `guide-refresh`
-- impact labels: frontdoor 재구성, 학습 흐름 강화, 용어 정리 강화
+- impact labels: frontdoor 재구성, 학습 흐름 강화, 용어 정리 강화, Mermaid 다이어그램 추가, Obsidian hybrid 출력 추가
 
 ## decision
 
@@ -24,12 +24,20 @@
 
 - `README.md`
   - 한 줄 정의, Claude Code와의 차이, 버전 기준, 핵심 표면, 자주 하는 오해, 추천 읽기 순서를 재구성
+  - Mermaid 시스템 맵과 Obsidian companion pack 안내 추가
 - `01-learning-paths.md`
   - 입문 → orchestration → 운영 → 확장/통합 → source reading의 5단계 학습 경로로 재작성
+  - Mermaid 학습 순서 맵 추가
 - `02-glossary.md`
   - 학습자가 실제로 헷갈리는 축 중심으로 용어 재정리
 - `sections/01-overview.md`
   - 재작성 근거, upstream evidence, 문서 판단 기록 강화
+- `assets/diagrams/`
+  - Mermaid source (`.mmd`) 파일 추가
+- `OBSIDIAN-VAULT-MAP.md`
+  - repo guide와 vault notes 간 대응 관계 기록
+- `obsidian/oh-my-claudecode Guide/`
+  - MOC / Overview / Learning Paths / Glossary / Concepts / Workflows / References 노트 팩 추가
 
 ## upstream commits reviewed
 
