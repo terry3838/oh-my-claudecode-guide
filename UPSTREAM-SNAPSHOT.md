@@ -2,9 +2,9 @@
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
 - previous synced commit: `fae376508355fb03ea6a2477453f37f0a59e707f`
-- current synced commit: `fae376508355fb03ea6a2477453f37f0a59e707f`
-- sync mode: `no-change`
-- impact labels: 일반 변경
+- current synced commit: `e3509365cfc264228c68c417d39c45d5b4df70cb`
+- sync mode: `update`
+- impact labels: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인
 - guide repo: `oh-my-claudecode-guide`
 
 ## 원본 한줄 요약
@@ -13,19 +13,18 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 
 ## recent upstream commits
 
-- `fae37650 chore: update Discord invite link to OmO (Ultraworkers) server`
-- `0ec792c0 chore: gitignore release-body.md to prevent stale release notes`
-- `f93e27bc fix(release): add version sync hook + fix stale release body`
-- `8660d291 fix(ci): sync version markers to 4.9.3`
-- `884ec78d chore: bump version to 4.9.3`
-- `f9bbb99e Merge remote-tracking branch 'origin/dev'`
-- `cc71a7db Merge pull request #1982 from riftzen-bit/fix/outbox-reader-partial-lines`
-- `88d6a044 Merge pull request #1981 from riftzen-bit/fix/team-status-tmux-provider`
+- `e3509365 docs: align top collaborators with main-merged commit authors`
+- `5ddcf6cf docs: add top collaborators by commit count to README`
+- `9db07e1c docs: promote maintainers and ambassadors in README`
+- `8868fd42 fix(release): rebuild dist for 4.10.1`
+- `5fa0072e Merge origin/dev for v4.10.0 release`
+- `bd698534 Merge pull request #2115 from Yeachan-Heo/release/4.10.0`
+- `0c64848d docs(release): prepare 4.10.0 notes and credits`
+- `33f75cfc chore(release): prepare 4.10.0`
 
 ## top-level structure
 
 - `.claude-plugin/`
-- `.eslintignore`
 - `.mcp.json`
 - `.npmignore`
 - `agents/`
@@ -44,10 +43,30 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 - `LICENSE`
 - `missions/`
 - `package-lock.json`
+- `package.json`
 
 ## changed files
 
-- 변경 파일 없음
+- `.claude-plugin/marketplace.json`
+- `.claude-plugin/plugin.json`
+- `.eslintignore`
+- `.github/release-body.md`
+- `CHANGELOG.md`
+- `CLAUDE.md`
+- `README.md`
+- `SECURITY.md`
+- `bridge/cli.cjs`
+- `bridge/gyoshu_bridge.py`
+- `bridge/mcp-server.cjs`
+- `bridge/runtime-cli.cjs`
+- `bridge/team-bridge.cjs`
+- `bridge/team-mcp.cjs`
+- `bridge/team.js`
+- `dist/__tests__/agent-registry.test.js`
+- `dist/__tests__/agent-registry.test.js.map`
+- `dist/__tests__/ast-tools-path-restriction.test.d.ts`
+- `dist/__tests__/ast-tools-path-restriction.test.d.ts.map`
+- `dist/__tests__/ast-tools-path-restriction.test.js`
 
 ## README excerpt
 
@@ -72,6 +91,29 @@ _Don't learn Claude Code. Just use OMC._
 [Get Started](#quick-start) • [Documentation](https://yeachan-heo.github.io/oh-my-claudecode-website) • [CLI Reference](https://yeachan-heo.github.io/oh-my-claudecode-website/docs.html#cli-reference) • [Workflows](https://yeachan-heo.github.io/oh-my-claudecode-website/docs.html#workflows) • [Migration Guide](docs/MIGRATION.md) • [Discord](https://discord.gg/PUwSMR9XNk)
 
 ---
+
+## Core Maintainers
+
+| Role | Name | GitHub |
+| --- | --- | --- |
+| Creator & Lead | Yeachan Heo | [@Yeachan-Heo](https://github.com/Yeachan-Heo) |
+| Maintainer | HaD0Yun | [@HaD0Yun](https://github.com/HaD0Yun) |
+
+## Ambassadors
+
+| Name | GitHub |
+| --- | --- |
+| Sigrid Jin | [@sigridjineth](https://github.com/sigridjineth) |
+
+## Top Collaborators
+
+| Name | GitHub |
+| --- | --- |
+| riftzen-bit | [@riftzen-bit](https://github.com/riftzen-bit) |
+| Seunggwan Song | [@nathan-song](https://github.com/nathan-song) |
+| JunghwanNA | [@shaun0927](https://github.com/shaun0927) |
+| Junho Yeo | [@junhoyeo](https://github.com/junhoyeo) |
+| Alex Urevick-Ackelsberg | [@AlexUrevick](https://github.com/AlexUrevick) |
 
 ## Quick Start
 
@@ -149,26 +191,4 @@ omc team 2:gemini "redesign UI components for accessibility"
 omc team 1:claude "implement the payment flow"
 omc team status auth-review
 omc team shutdown auth-review
-```
-
-`/omc-teams` remains as a legacy compatibility skill and now routes to `omc team ...`.
-
-For mixed Codex + Gemini work in one command, use the **`/ccg`** skill (routes via `/ask codex` + `/ask gemini`, then Claude synthesizes):
-
-```bash
-/ccg Review this PR — architecture (Codex) and UI components (Gemini)
-```
-
-| Surface                   | Workers            | Best For                                     |
-| ------------------------- | ------------------ | -------------------------------------------- |
-| `omc team N:codex "..."`  | N Codex CLI panes  | Code review, security analysis, architecture |
-| `omc team N:gemini "..."` | N Gemini CLI panes | UI/UX design, docs, large-context tasks      |
-| `omc team N:claude "..."` | N Claude CLI panes | General tasks via Claude CLI in tmux         |
-| `/ccg`                    | /ask codex + /ask gemini | Tri-model advisor synthesis           |
-
-Workers spawn on-demand and die when their task completes — no idle resource usage. Requires `codex` / `gemini` CLIs installed and an active tmux session.
-
-> **Note: Package naming** — The project is branded as **oh-my-claudecode** (repo, plugin, commands), but the npm package is published as [`oh-my-claude-sisyphus`](https://www.npmjs.com/package/oh-my-claude-sisyphus). If you install or upgrade the CLI tools via npm/bun, use `npm i -g oh-my-claude-sisyphus@latest`.
-
-### Updating
 ```
