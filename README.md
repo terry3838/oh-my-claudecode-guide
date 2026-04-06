@@ -342,12 +342,12 @@ flowchart TD
 
 - origin repo: `oh-my-claudecode`
 - latest source commit: `2487d3878f8d`
-- sync mode: `update`
-- 영향 분류: 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증
+- sync mode: `no-change`
+- 영향 분류: 일반 변경
 
 ### 이번 반영 포인트
 
-origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증.
+이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
 
 ### 최근 upstream 커밋
 
@@ -360,26 +360,7 @@ origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽
 
 ### 변경 파일 샘플
 
-- `.claude-plugin/marketplace.json`
-- `.claude-plugin/plugin.json`
-- `.github/CLAUDE.md`
-- `.github/release-body.md`
-- `.github/workflows/pr-check.yml`
-- `.gitignore`
-- `CHANGELOG.md`
-- `bridge/cli.cjs`
-- `bridge/mcp-server.cjs`
-- `bridge/runtime-cli.cjs`
-- `bridge/team-mcp.cjs`
-- `bridge/team.js`
-- `dist/__tests__/bedrock-lm-suffix-hook.test.js`
-- `dist/__tests__/bedrock-lm-suffix-hook.test.js.map`
-- `dist/__tests__/hud-marketplace-resolution.test.js`
-- `dist/__tests__/hud-marketplace-resolution.test.js.map`
-- `dist/__tests__/hud/call-counts.test.js`
-- `dist/__tests__/hud/call-counts.test.js.map`
-- `dist/__tests__/hud/git.test.js`
-- `dist/__tests__/hud/git.test.js.map`
+- 이번 싸이클에서는 신규 변경 파일이 없습니다.
 
 > 이 블록은 guide sync가 자동 갱신합니다.
 <!-- GUIDE_SYNC:END -->

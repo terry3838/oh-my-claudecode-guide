@@ -2,14 +2,14 @@
 
 ## latest cycle
 
-- previous source sha: `e3509365cfc264228c68c417d39c45d5b4df70cb`
+- previous source sha: `2487d3878f8d25e60802940b020d5ee8774d135e`
 - current source sha: `2487d3878f8d25e60802940b020d5ee8774d135e`
-- mode: `update`
-- impact labels: 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증
+- mode: `no-change`
+- impact labels: 일반 변경
 
 ## decision
 
-origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증.
+이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
 
 ## upstream commits reviewed
 
@@ -27,23 +27,4 @@ origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽
 - source remote: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
 - docs/interesting dirs: docs/, skills/, src/, tests/, examples/
 - changed file sample:
-- `.claude-plugin/marketplace.json`
-- `.claude-plugin/plugin.json`
-- `.github/CLAUDE.md`
-- `.github/release-body.md`
-- `.github/workflows/pr-check.yml`
-- `.gitignore`
-- `CHANGELOG.md`
-- `bridge/cli.cjs`
-- `bridge/mcp-server.cjs`
-- `bridge/runtime-cli.cjs`
-- `bridge/team-mcp.cjs`
-- `bridge/team.js`
-- `dist/__tests__/bedrock-lm-suffix-hook.test.js`
-- `dist/__tests__/bedrock-lm-suffix-hook.test.js.map`
-- `dist/__tests__/hud-marketplace-resolution.test.js`
-- `dist/__tests__/hud-marketplace-resolution.test.js.map`
-- `dist/__tests__/hud/call-counts.test.js`
-- `dist/__tests__/hud/call-counts.test.js.map`
-- `dist/__tests__/hud/git.test.js`
-- `dist/__tests__/hud/git.test.js.map`
+- 변경 파일 없음

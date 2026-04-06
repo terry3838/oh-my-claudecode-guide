@@ -1,10 +1,10 @@
 # Upstream Snapshot — oh-my-claudecode
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
-- previous synced commit: `e3509365cfc264228c68c417d39c45d5b4df70cb`
+- previous synced commit: `2487d3878f8d25e60802940b020d5ee8774d135e`
 - current synced commit: `2487d3878f8d25e60802940b020d5ee8774d135e`
-- sync mode: `update`
-- impact labels: 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증
+- sync mode: `no-change`
+- impact labels: 일반 변경
 - guide repo: `oh-my-claudecode-guide`
 
 ## 원본 한줄 요약
@@ -47,26 +47,7 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 
 ## changed files
 
-- `.claude-plugin/marketplace.json`
-- `.claude-plugin/plugin.json`
-- `.github/CLAUDE.md`
-- `.github/release-body.md`
-- `.github/workflows/pr-check.yml`
-- `.gitignore`
-- `CHANGELOG.md`
-- `bridge/cli.cjs`
-- `bridge/mcp-server.cjs`
-- `bridge/runtime-cli.cjs`
-- `bridge/team-mcp.cjs`
-- `bridge/team.js`
-- `dist/__tests__/bedrock-lm-suffix-hook.test.js`
-- `dist/__tests__/bedrock-lm-suffix-hook.test.js.map`
-- `dist/__tests__/hud-marketplace-resolution.test.js`
-- `dist/__tests__/hud-marketplace-resolution.test.js.map`
-- `dist/__tests__/hud/call-counts.test.js`
-- `dist/__tests__/hud/call-counts.test.js.map`
-- `dist/__tests__/hud/git.test.js`
-- `dist/__tests__/hud/git.test.js.map`
+- 변경 파일 없음
 
 ## README excerpt
 
