@@ -3,28 +3,47 @@
 ## latest cycle
 
 - previous source sha: `2487d3878f8d25e60802940b020d5ee8774d135e`
-- current source sha: `2487d3878f8d25e60802940b020d5ee8774d135e`
-- mode: `no-change`
-- impact labels: 일반 변경
+- current source sha: `823f59ba4dfe3efd3518d99ad83156a11cdcb7b5`
+- mode: `update`
+- impact labels: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인, 테스트/검증
 
 ## decision
 
-이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
+origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인, 테스트/검증.
 
 ## upstream commits reviewed
 
-- `2487d387 Merge pull request #2162 from Yeachan-Heo/release/4.10.2`
-- `1fe4f160 Unblock the 4.10.2 release path`
-- `81d153ef Merge pull request #2146 from Yeachan-Heo/issue-2143-omc-launch-followup`
-- `42b92f6f feat(hud): add configurable call count icon format (#2151)`
-- `80d1cae2 fix: resolve global HUD npm package lookup outside Node projects (#2149)`
-- `25f3e2de fix: force-load omc claude config on omc launch`
-- `0d836e64 fix: preserve existing global CLAUDE.md during setup (#2144)`
-- `954f998a Preserve team worker pane width and bundled agent path resolution (#2137)`
+- `823f59ba chore(release): bump version to v4.11.1`
+- `3e80dac6 fix(installer): use getPackageDir() instead of __dirname for HUD helper copies (#2347)`
+- `ec9398d7 Merge pull request #2331 from shaun0927/fix/hardmax-iterations-bypass`
+- `9b340a8a fix(security): clamp hardMaxIterations and enforce in autopilot`
+- `d716a30d Merge pull request #2247 from pgagarinov/feat/hud-git-status`
+- `e3b04e45 Merge pull request #2333 from shaun0927/fix/team-registration-locks`
+- `cb653014 feat(hud): add git working tree status element`
+- `d671cecb fix(team): wrap withFileLockSync in try/catch for lock contention safety`
 
 ## evidence
 
 - source remote: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
 - docs/interesting dirs: docs/, skills/, src/, tests/, examples/
 - changed file sample:
-- 변경 파일 없음
+- `.claude-plugin/marketplace.json`
+- `.claude-plugin/plugin.json`
+- `.github/release-body.md`
+- `.github/workflows/release.yml`
+- `CHANGELOG.md`
+- `README.md`
+- `bridge/cli.cjs`
+- `bridge/mcp-server.cjs`
+- `bridge/runtime-cli.cjs`
+- `bridge/team-bridge.cjs`
+- `bridge/team-mcp.cjs`
+- `bridge/team.js`
+- `dist/__tests__/auto-update.test.js`
+- `dist/__tests__/auto-update.test.js.map`
+- `dist/__tests__/cli-config-stop-callback.test.js`
+- `dist/__tests__/cli-config-stop-callback.test.js.map`
+- `dist/__tests__/delegation-enforcement-levels.test.js`
+- `dist/__tests__/delegation-enforcement-levels.test.js.map`
+- `dist/__tests__/doctor-conflicts.test.js`
+- `dist/__tests__/doctor-conflicts.test.js.map`

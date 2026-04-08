@@ -2,9 +2,9 @@
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
 - previous synced commit: `2487d3878f8d25e60802940b020d5ee8774d135e`
-- current synced commit: `2487d3878f8d25e60802940b020d5ee8774d135e`
-- sync mode: `no-change`
-- impact labels: 일반 변경
+- current synced commit: `823f59ba4dfe3efd3518d99ad83156a11cdcb7b5`
+- sync mode: `update`
+- impact labels: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인, 테스트/검증
 - guide repo: `oh-my-claudecode-guide`
 
 ## 원본 한줄 요약
@@ -13,14 +13,14 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 
 ## recent upstream commits
 
-- `2487d387 Merge pull request #2162 from Yeachan-Heo/release/4.10.2`
-- `1fe4f160 Unblock the 4.10.2 release path`
-- `81d153ef Merge pull request #2146 from Yeachan-Heo/issue-2143-omc-launch-followup`
-- `42b92f6f feat(hud): add configurable call count icon format (#2151)`
-- `80d1cae2 fix: resolve global HUD npm package lookup outside Node projects (#2149)`
-- `25f3e2de fix: force-load omc claude config on omc launch`
-- `0d836e64 fix: preserve existing global CLAUDE.md during setup (#2144)`
-- `954f998a Preserve team worker pane width and bundled agent path resolution (#2137)`
+- `823f59ba chore(release): bump version to v4.11.1`
+- `3e80dac6 fix(installer): use getPackageDir() instead of __dirname for HUD helper copies (#2347)`
+- `ec9398d7 Merge pull request #2331 from shaun0927/fix/hardmax-iterations-bypass`
+- `9b340a8a fix(security): clamp hardMaxIterations and enforce in autopilot`
+- `d716a30d Merge pull request #2247 from pgagarinov/feat/hud-git-status`
+- `e3b04e45 Merge pull request #2333 from shaun0927/fix/team-registration-locks`
+- `cb653014 feat(hud): add git working tree status element`
+- `d671cecb fix(team): wrap withFileLockSync in try/catch for lock contention safety`
 
 ## top-level structure
 
@@ -47,7 +47,26 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 
 ## changed files
 
-- 변경 파일 없음
+- `.claude-plugin/marketplace.json`
+- `.claude-plugin/plugin.json`
+- `.github/release-body.md`
+- `.github/workflows/release.yml`
+- `CHANGELOG.md`
+- `README.md`
+- `bridge/cli.cjs`
+- `bridge/mcp-server.cjs`
+- `bridge/runtime-cli.cjs`
+- `bridge/team-bridge.cjs`
+- `bridge/team-mcp.cjs`
+- `bridge/team.js`
+- `dist/__tests__/auto-update.test.js`
+- `dist/__tests__/auto-update.test.js.map`
+- `dist/__tests__/cli-config-stop-callback.test.js`
+- `dist/__tests__/cli-config-stop-callback.test.js.map`
+- `dist/__tests__/delegation-enforcement-levels.test.js`
+- `dist/__tests__/delegation-enforcement-levels.test.js.map`
+- `dist/__tests__/doctor-conflicts.test.js`
+- `dist/__tests__/doctor-conflicts.test.js.map`
 
 ## README excerpt
 
@@ -116,17 +135,40 @@ npm i -g oh-my-claude-sisyphus@latest
 **Step 2: Setup**
 
 ```bash
+# Inside a Claude Code / OMC session
 /setup
 /omc-setup
+
+# From your terminal
+omc setup
 ```
 
 **Step 3: Build something**
 
-```
+```bash
+# Inside a Claude Code / OMC session
+/autopilot "build a REST API for managing tasks"
+
+# Natural-language in-session shortcut
 autopilot: build a REST API for managing tasks
 ```
 
 That's it. Everything else is automatic.
+
+### CLI Commands vs In-Session Skills
+
+OMC exposes two different surfaces:
+
+- **Terminal CLI commands**: run `omc ...` from your shell after installing the npm/runtime path (`npm i -g oh-my-claude-sisyphus@latest`) or from a local checkout.
+- **In-session skills**: run `/...` inside a Claude Code session after installing the plugin/setup flow.
+
+| Feature | Terminal CLI | In-session skill | Notes |
+| --- | --- | --- | --- |
+| Setup | `omc setup` | `/setup` or `/omc-setup` | Both are real entrypoints. `/setup` is the easiest plugin-first path. |
+| Ask providers | `omc ask codex "review this patch"` | `/ask codex "review this patch"` | Both route through the same advisor flow. |
+| Team orchestration | `omc team 2:codex "review auth flow"` | `/team 3:executor "fix all TypeScript errors"` | Both exist, but they are different runtimes: `omc team` launches tmux CLI workers; `/team` runs the in-session native team workflow. |
+| Autopilot / Ralph / Ultrawork / Deep Interview | — | `/autopilot ...`, `/ralph ...`, `/ultrawork ...`, `/deep-interview ...` | These are in-session skills. There is no `omc autopilot` / `omc ralph` / `omc ultrawork` CLI subcommand in this repo. |
+| Autoresearch | `omc autoresearch ...` | `/deep-interview --autoresearch ...` | `omc autoresearch` is the real CLI command. The in-session path is the setup/interview lane that helps you launch it. |
 
 ### Not Sure Where to Start?
 
@@ -146,30 +188,7 @@ Starting in **v4.1.7**, **Team** is the canonical orchestration surface in OMC. 
 /team 3:executor "fix all TypeScript errors"
 ```
 
+Use `/team ...` when you want Claude Code's in-session native team workflow. Use `omc team ...` when you want terminal-launched tmux CLI workers (`claude` / `codex` / `gemini` panes).
+
 Team runs as a staged pipeline:
-
-`team-plan → team-prd → team-exec → team-verify → team-fix (loop)`
-
-Enable Claude Code native teams in `~/.claude/settings.json`:
-
-```json
-{
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
-  }
-}
-```
-
-> If teams are disabled, OMC will warn you and fall back to non-team execution where possible.
-
-### tmux CLI Workers — Codex & Gemini (v4.4.0+)
-
-**v4.4.0 removes the Codex/Gemini MCP servers** (`x`, `g` providers). Use the CLI-first Team runtime (`omc team ...`) to spawn real tmux worker panes:
-
-```bash
-omc team 2:codex "review auth module for security issues"
-omc team 2:gemini "redesign UI components for accessibility"
-omc team 1:claude "implement the payment flow"
-omc team status auth-review
-omc team shutdown auth-review
 ```
