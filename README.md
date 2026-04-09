@@ -341,45 +341,45 @@ flowchart TD
 ## 자동 동기화 상태
 
 - origin repo: `oh-my-claudecode`
-- latest source commit: `823f59ba4dfe`
+- latest source commit: `6b3cd060a954`
 - sync mode: `update`
-- 영향 분류: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인, 테스트/검증
+- 영향 분류: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증
 
 ### 이번 반영 포인트
 
-origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인, 테스트/검증.
+origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증.
 
 ### 최근 upstream 커밋
 
-- `823f59ba chore(release): bump version to v4.11.1`
-- `3e80dac6 fix(installer): use getPackageDir() instead of __dirname for HUD helper copies (#2347)`
-- `ec9398d7 Merge pull request #2331 from shaun0927/fix/hardmax-iterations-bypass`
-- `9b340a8a fix(security): clamp hardMaxIterations and enforce in autopilot`
-- `d716a30d Merge pull request #2247 from pgagarinov/feat/hud-git-status`
-- `e3b04e45 Merge pull request #2333 from shaun0927/fix/team-registration-locks`
+- `6b3cd060 chore(release): bump version to v4.11.2`
+- `6746e503 fix(installer): prune duplicate agents and skills when plugin provides them (#2252)`
+- `322459b0 Merge pull request #2359 from Yeachan-Heo/fix/setup-regression-tests`
+- `14a89cd0 test(installer): add setup contract regression tests and stale cleanup`
+- `67ec0065 Merge pull request #2352 from nextor2k/fix/worktree-project-identifier`
+- `d372d6e9 Merge pull request #2349 from wwang2/fix/issue-2348-self-heal-node-path`
 
 ### 변경 파일 샘플
 
 - `.claude-plugin/marketplace.json`
 - `.claude-plugin/plugin.json`
-- `.github/release-body.md`
 - `.github/workflows/release.yml`
-- `CHANGELOG.md`
 - `README.md`
-- `bridge/cli.cjs`
-- `bridge/mcp-server.cjs`
-- `bridge/runtime-cli.cjs`
-- `bridge/team-bridge.cjs`
-- `bridge/team-mcp.cjs`
-- `bridge/team.js`
-- `dist/__tests__/auto-update.test.js`
-- `dist/__tests__/auto-update.test.js.map`
-- `dist/__tests__/cli-config-stop-callback.test.js`
-- `dist/__tests__/cli-config-stop-callback.test.js.map`
-- `dist/__tests__/delegation-enforcement-levels.test.js`
-- `dist/__tests__/delegation-enforcement-levels.test.js.map`
-- `dist/__tests__/doctor-conflicts.test.js`
-- `dist/__tests__/doctor-conflicts.test.js.map`
+- `docs/CLAUDE.md`
+- `package-lock.json`
+- `package.json`
+- `scripts/lib/hud-wrapper-template.mjs`
+- `scripts/lib/hud-wrapper-template.txt`
+- `scripts/plugin-setup.mjs`
+- `src/__tests__/hud-build-guidance.test.ts`
+- `src/__tests__/hud-marketplace-resolution.test.ts`
+- `src/__tests__/hud-windows.test.ts`
+- `src/__tests__/hud-wrapper-template-sync.test.ts`
+- `src/__tests__/hud/state.test.ts`
+- `src/__tests__/paths-consistency.test.ts`
+- `src/__tests__/plugin-setup-devpaths.test.ts`
+- `src/__tests__/session-start-cache-cleanup.test.ts`
+- `src/__tests__/setup-contracts-regression.test.ts`
+- `src/__tests__/task-continuation.test.ts`
 
 > 이 블록은 guide sync가 자동 갱신합니다.
 <!-- GUIDE_SYNC:END -->
