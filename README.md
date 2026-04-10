@@ -341,45 +341,45 @@ flowchart TD
 ## 자동 동기화 상태
 
 - origin repo: `oh-my-claudecode`
-- latest source commit: `6b3cd060a954`
+- latest source commit: `7b4a9e0435b7`
 - sync mode: `update`
-- 영향 분류: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증
+- 영향 분류: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인
 
 ### 이번 반영 포인트
 
-origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증.
+origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인.
 
 ### 최근 upstream 커밋
 
-- `6b3cd060 chore(release): bump version to v4.11.2`
-- `6746e503 fix(installer): prune duplicate agents and skills when plugin provides them (#2252)`
-- `322459b0 Merge pull request #2359 from Yeachan-Heo/fix/setup-regression-tests`
-- `14a89cd0 test(installer): add setup contract regression tests and stale cleanup`
-- `67ec0065 Merge pull request #2352 from nextor2k/fix/worktree-project-identifier`
-- `d372d6e9 Merge pull request #2349 from wwang2/fix/issue-2348-self-heal-node-path`
+- `7b4a9e04 Merge pull request #2420 from Yeachan-Heo/dev`
+- `b1dcbc35 fix(release): sync marketplace.json, docs/CLAUDE.md, and package-lock to 4.11.4`
+- `2e880952 chore(release): bump version to v4.11.4`
+- `dc3e9724 fix(team): preserve forceInherit by skipping worker model resolution (#2418)`
+- `06ea4ed3 fix(hud): try older built cache versions when latest import fails (#2416)`
+- `dc2f9629 fix(installer): use portable hook command paths on Windows (#2415)`
 
 ### 변경 파일 샘플
 
 - `.claude-plugin/marketplace.json`
 - `.claude-plugin/plugin.json`
-- `.github/workflows/release.yml`
+- `.github/release-body.md`
+- `CHANGELOG.md`
+- `CONTRIBUTING.md`
+- `README.de.md`
+- `README.es.md`
+- `README.fr.md`
+- `README.it.md`
+- `README.ja.md`
+- `README.ko.md`
 - `README.md`
-- `docs/CLAUDE.md`
-- `package-lock.json`
-- `package.json`
-- `scripts/lib/hud-wrapper-template.mjs`
-- `scripts/lib/hud-wrapper-template.txt`
-- `scripts/plugin-setup.mjs`
-- `src/__tests__/hud-build-guidance.test.ts`
-- `src/__tests__/hud-marketplace-resolution.test.ts`
-- `src/__tests__/hud-windows.test.ts`
-- `src/__tests__/hud-wrapper-template-sync.test.ts`
-- `src/__tests__/hud/state.test.ts`
-- `src/__tests__/paths-consistency.test.ts`
-- `src/__tests__/plugin-setup-devpaths.test.ts`
-- `src/__tests__/session-start-cache-cleanup.test.ts`
-- `src/__tests__/setup-contracts-regression.test.ts`
-- `src/__tests__/task-continuation.test.ts`
+- `README.pt.md`
+- `README.ru.md`
+- `README.tr.md`
+- `README.vi.md`
+- `README.zh.md`
+- `bridge/cli.cjs`
+- `bridge/mcp-server.cjs`
+- `bridge/runtime-cli.cjs`
 
 > 이 블록은 guide sync가 자동 갱신합니다.
 <!-- GUIDE_SYNC:END -->

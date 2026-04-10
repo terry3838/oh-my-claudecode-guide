@@ -1,10 +1,10 @@
 # Upstream Snapshot — oh-my-claudecode
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
-- previous synced commit: `823f59ba4dfe3efd3518d99ad83156a11cdcb7b5`
-- current synced commit: `6b3cd060a954b122a4cd07eae71698aa415432f3`
+- previous synced commit: `6b3cd060a954b122a4cd07eae71698aa415432f3`
+- current synced commit: `7b4a9e0435b7913de8942fa5a11d54eed7f1b85e`
 - sync mode: `update`
-- impact labels: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드, 테스트/검증
+- impact labels: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인
 - guide repo: `oh-my-claudecode-guide`
 
 ## 원본 한줄 요약
@@ -13,14 +13,14 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 
 ## recent upstream commits
 
-- `6b3cd060 chore(release): bump version to v4.11.2`
-- `6746e503 fix(installer): prune duplicate agents and skills when plugin provides them (#2252)`
-- `322459b0 Merge pull request #2359 from Yeachan-Heo/fix/setup-regression-tests`
-- `14a89cd0 test(installer): add setup contract regression tests and stale cleanup`
-- `67ec0065 Merge pull request #2352 from nextor2k/fix/worktree-project-identifier`
-- `d372d6e9 Merge pull request #2349 from wwang2/fix/issue-2348-self-heal-node-path`
-- `d9402565 Merge pull request #2356 from pgagarinov/feat/hud-plugin-root-envvar`
-- `fc72b2f3 fix(hud): sort prerelease tags numerically in cache version comparator`
+- `7b4a9e04 Merge pull request #2420 from Yeachan-Heo/dev`
+- `b1dcbc35 fix(release): sync marketplace.json, docs/CLAUDE.md, and package-lock to 4.11.4`
+- `2e880952 chore(release): bump version to v4.11.4`
+- `dc3e9724 fix(team): preserve forceInherit by skipping worker model resolution (#2418)`
+- `06ea4ed3 fix(hud): try older built cache versions when latest import fails (#2416)`
+- `dc2f9629 fix(installer): use portable hook command paths on Windows (#2415)`
+- `8523b071 fix(preemptive-compaction): fallback to hook context window usage (#2412)`
+- `e26648fe fix(keyword-detector): narrow false-positive suppression for #2390 (#2411)`
 
 ## top-level structure
 
@@ -35,6 +35,7 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 - `bridge/`
 - `CHANGELOG.md`
 - `CLAUDE.md`
+- `CONTRIBUTING.md`
 - `dist/`
 - `docs/`
 - `eslint.config.js`
@@ -43,30 +44,29 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 - `LICENSE`
 - `missions/`
 - `package-lock.json`
-- `package.json`
 
 ## changed files
 
 - `.claude-plugin/marketplace.json`
 - `.claude-plugin/plugin.json`
-- `.github/workflows/release.yml`
+- `.github/release-body.md`
+- `CHANGELOG.md`
+- `CONTRIBUTING.md`
+- `README.de.md`
+- `README.es.md`
+- `README.fr.md`
+- `README.it.md`
+- `README.ja.md`
+- `README.ko.md`
 - `README.md`
-- `docs/CLAUDE.md`
-- `package-lock.json`
-- `package.json`
-- `scripts/lib/hud-wrapper-template.mjs`
-- `scripts/lib/hud-wrapper-template.txt`
-- `scripts/plugin-setup.mjs`
-- `src/__tests__/hud-build-guidance.test.ts`
-- `src/__tests__/hud-marketplace-resolution.test.ts`
-- `src/__tests__/hud-windows.test.ts`
-- `src/__tests__/hud-wrapper-template-sync.test.ts`
-- `src/__tests__/hud/state.test.ts`
-- `src/__tests__/paths-consistency.test.ts`
-- `src/__tests__/plugin-setup-devpaths.test.ts`
-- `src/__tests__/session-start-cache-cleanup.test.ts`
-- `src/__tests__/setup-contracts-regression.test.ts`
-- `src/__tests__/task-continuation.test.ts`
+- `README.pt.md`
+- `README.ru.md`
+- `README.tr.md`
+- `README.vi.md`
+- `README.zh.md`
+- `bridge/cli.cjs`
+- `bridge/mcp-server.cjs`
+- `bridge/runtime-cli.cjs`
 
 ## README excerpt
 
@@ -97,7 +97,6 @@ _Don't learn Claude Code. Just use OMC._
 | Role | Name | GitHub |
 | --- | --- | --- |
 | Creator & Lead | Yeachan Heo | [@Yeachan-Heo](https://github.com/Yeachan-Heo) |
-| Maintainer | HaD0Yun | [@HaD0Yun](https://github.com/HaD0Yun) |
 
 ## Ambassadors
 
@@ -107,13 +106,13 @@ _Don't learn Claude Code. Just use OMC._
 
 ## Top Collaborators
 
-| Name | GitHub |
-| --- | --- |
-| riftzen-bit | [@riftzen-bit](https://github.com/riftzen-bit) |
-| Seunggwan Song | [@nathan-song](https://github.com/nathan-song) |
-| JunghwanNA | [@shaun0927](https://github.com/shaun0927) |
-| Junho Yeo | [@junhoyeo](https://github.com/junhoyeo) |
-| Alex Urevick-Ackelsberg | [@AlexUrevick](https://github.com/AlexUrevick) |
+| Name | GitHub | Commits |
+| --- | --- | --- |
+| JunghwanNA | [@shaun0927](https://github.com/shaun0927) | 65 |
+| riftzen-bit | [@riftzen-bit](https://github.com/riftzen-bit) | 52 |
+| Seunggwan Song | [@Nathan-Song](https://github.com/Nathan-Song) | 20 |
+| BLUE | [@blue-int](https://github.com/blue-int) | 20 |
+| Junho Yeo | [@junhoyeo](https://github.com/junhoyeo) | 15 |
 
 ## Quick Start
 
@@ -143,7 +142,7 @@ npm i -g oh-my-claude-sisyphus@latest
 omc setup
 ```
 
-If you run OMC via `omc --plugin-dir <path>` or `claude --plugin-dir <path>`, add `--plugin-dir-mode` to `omc setup` (or export `OMC_PLUGIN_ROOT` before running it) so the installer doesn't duplicate skills/agents that the plugin already provides at runtime.
+If you run OMC via `omc --plugin-dir <path>` or `claude --plugin-dir <path>`, add `--plugin-dir-mode` to `omc setup` (or export `OMC_PLUGIN_ROOT` before running it) so the installer doesn't duplicate skills/agents that the plugin already provides at runtime. See the [Plugin directory flags section in REFERENCE.md](./docs/REFERENCE.md#plugin-directory-flags) for a complete decision matrix and all available flags.
 
 **Step 3: Build something**
 
