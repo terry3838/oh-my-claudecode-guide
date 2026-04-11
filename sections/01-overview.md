@@ -1,57 +1,36 @@
 # oh-my-claudecode 개요
 
-## 원본 저장소 역할
+## repo 역할
 
 - repo: `oh-my-claudecode`
 - source: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
+- version basis: `4.11.4`
 - latest synced commit: `7b4a9e0435b7`
-- summary: English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](README.ja.md) | [Español](README.es.md) | [Tiếng Việt](README.vi.md) | [Português](README.pt.md)
 
-## 이번 싸이클 판단
+## 왜 frontdoor를 다시 썼나
 
-- sync mode: `no-change`
-- impact labels: 일반 변경
-- 판단: 이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
+기존 문서도 repo breadth는 잘 보여줬지만,
+최근 upstream docs가 더 선명하게 강조하는 세 가지를 frontdoor에서 더 앞쪽에 놓을 필요가 있었어요.
 
-## 최근 upstream 커밋
+1. plugin 설치와 npm CLI 설치가 공존한다는 점
+2. `/team`과 `omc team`이 다른 표면이라는 점
+3. `--plugin-dir-mode`와 Team canonical flow가 현재 운영 계약이라는 점
 
-- `7b4a9e04 Merge pull request #2420 from Yeachan-Heo/dev`
-- `b1dcbc35 fix(release): sync marketplace.json, docs/CLAUDE.md, and package-lock to 4.11.4`
-- `2e880952 chore(release): bump version to v4.11.4`
-- `dc3e9724 fix(team): preserve forceInherit by skipping worker model resolution (#2418)`
-- `06ea4ed3 fix(hud): try older built cache versions when latest import fails (#2416)`
-- `dc2f9629 fix(installer): use portable hook command paths on Windows (#2415)`
+## 지금 기준의 핵심 메시지
 
-## 확인한 원본 구조
+- OMC는 Claude Code runtime이에요
+- Team이 현재 canonical orchestration surface예요
+- plugin-only로 보면 반쪽 이해가 돼요
+- hooks/state/HUD/OpenClaw routing까지 함께 봐야 현재 구조가 보여요
 
-- `.claude-plugin/`
-- `.mcp.json`
-- `.npmignore`
-- `agents/`
-- `AGENTS.md`
-- `assets/`
-- `benchmark/`
-- `benchmarks/`
-- `bridge/`
-- `CHANGELOG.md`
-- `CLAUDE.md`
-- `CONTRIBUTING.md`
-- `dist/`
-- `docs/`
-- `eslint.config.js`
-- `examples/`
-- `hooks/`
-- `LICENSE`
-- `missions/`
-- `package-lock.json`
+## 학습자가 먼저 볼 것
 
-## guide 업데이트 포인트
+- `README.md`
+- `01-learning-paths.md`
+- `sections/02-team-runtime-and-worker-model.md`
+- `sections/03-hooks-openclaw-and-observability.md`
 
-- README 관리 블록 갱신
-- `UPSTREAM-SNAPSHOT.md` 갱신
-- `SYNC-LOG.md` 갱신
-- 개요 문서 재작성
+## 다음 행동
 
-## 변경 파일 샘플
-
-- 변경 파일 없음
+처음이면 `/team`과 `omc team` 차이부터 잡으세요.
+운영자면 plugin-dir mode와 hooks/OpenClaw 표면을 같이 보세요.
