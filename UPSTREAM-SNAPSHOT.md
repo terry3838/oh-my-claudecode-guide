@@ -1,10 +1,10 @@
 # Upstream Snapshot — oh-my-claudecode
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
-- previous synced commit: `6b3cd060a954b122a4cd07eae71698aa415432f3`
+- previous synced commit: `7b4a9e0435b7913de8942fa5a11d54eed7f1b85e`
 - current synced commit: `7b4a9e0435b7913de8942fa5a11d54eed7f1b85e`
-- sync mode: `update`
-- impact labels: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인
+- sync mode: `no-change`
+- impact labels: 일반 변경
 - guide repo: `oh-my-claudecode-guide`
 
 ## 원본 한줄 요약
@@ -47,26 +47,7 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 
 ## changed files
 
-- `.claude-plugin/marketplace.json`
-- `.claude-plugin/plugin.json`
-- `.github/release-body.md`
-- `CHANGELOG.md`
-- `CONTRIBUTING.md`
-- `README.de.md`
-- `README.es.md`
-- `README.fr.md`
-- `README.it.md`
-- `README.ja.md`
-- `README.ko.md`
-- `README.md`
-- `README.pt.md`
-- `README.ru.md`
-- `README.tr.md`
-- `README.vi.md`
-- `README.zh.md`
-- `bridge/cli.cjs`
-- `bridge/mcp-server.cjs`
-- `bridge/runtime-cli.cjs`
+- 변경 파일 없음
 
 ## README excerpt
 
