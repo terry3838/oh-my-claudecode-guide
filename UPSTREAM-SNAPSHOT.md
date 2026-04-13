@@ -1,10 +1,10 @@
 # Upstream Snapshot — oh-my-claudecode
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
-- previous synced commit: `7b4a9e0435b7913de8942fa5a11d54eed7f1b85e`
+- previous synced commit: `04655ee24207f367fee785b5eb33b21234d9e0e3`
 - current synced commit: `04655ee24207f367fee785b5eb33b21234d9e0e3`
-- sync mode: `update`
-- impact labels: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드
+- sync mode: `no-change`
+- impact labels: 일반 변경
 - guide repo: `oh-my-claudecode-guide`
 
 ## 원본 한줄 요약
@@ -47,26 +47,7 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 
 ## changed files
 
-- `.claude-plugin/marketplace.json`
-- `.claude-plugin/plugin.json`
-- `.github/release-body.md`
-- `CONTRIBUTING.md`
-- `README.md`
-- `bridge/cli.cjs`
-- `dist/__tests__/keyword-detector-script.test.js`
-- `dist/__tests__/keyword-detector-script.test.js.map`
-- `dist/__tests__/pre-tool-enforcer.test.js`
-- `dist/__tests__/pre-tool-enforcer.test.js.map`
-- `dist/__tests__/setup-claude-md-script.test.js`
-- `dist/__tests__/setup-claude-md-script.test.js.map`
-- `dist/cli/__tests__/launch.test.js`
-- `dist/cli/__tests__/launch.test.js.map`
-- `dist/cli/launch.d.ts.map`
-- `dist/cli/launch.js`
-- `dist/cli/launch.js.map`
-- `dist/hooks/__tests__/bridge-routing.test.js`
-- `dist/hooks/__tests__/bridge-routing.test.js.map`
-- `dist/hooks/bridge.d.ts.map`
+- 변경 파일 없음
 
 ## README excerpt
 

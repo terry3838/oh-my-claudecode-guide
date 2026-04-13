@@ -2,14 +2,14 @@
 
 ## latest cycle
 
-- previous source sha: `7b4a9e0435b7913de8942fa5a11d54eed7f1b85e`
+- previous source sha: `04655ee24207f367fee785b5eb33b21234d9e0e3`
 - current source sha: `04655ee24207f367fee785b5eb33b21234d9e0e3`
-- mode: `update`
-- impact labels: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드
+- mode: `no-change`
+- impact labels: 일반 변경
 
 ## decision
 
-origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 문서 구조, 스킬/플러그인, 소스코드.
+이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
 
 ## upstream commits reviewed
 
@@ -27,23 +27,4 @@ origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽
 - source remote: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
 - docs/interesting dirs: docs/, skills/, src/, tests/, examples/
 - changed file sample:
-- `.claude-plugin/marketplace.json`
-- `.claude-plugin/plugin.json`
-- `.github/release-body.md`
-- `CONTRIBUTING.md`
-- `README.md`
-- `bridge/cli.cjs`
-- `dist/__tests__/keyword-detector-script.test.js`
-- `dist/__tests__/keyword-detector-script.test.js.map`
-- `dist/__tests__/pre-tool-enforcer.test.js`
-- `dist/__tests__/pre-tool-enforcer.test.js.map`
-- `dist/__tests__/setup-claude-md-script.test.js`
-- `dist/__tests__/setup-claude-md-script.test.js.map`
-- `dist/cli/__tests__/launch.test.js`
-- `dist/cli/__tests__/launch.test.js.map`
-- `dist/cli/launch.d.ts.map`
-- `dist/cli/launch.js`
-- `dist/cli/launch.js.map`
-- `dist/hooks/__tests__/bridge-routing.test.js`
-- `dist/hooks/__tests__/bridge-routing.test.js.map`
-- `dist/hooks/bridge.d.ts.map`
+- 변경 파일 없음
