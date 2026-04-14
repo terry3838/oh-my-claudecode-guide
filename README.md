@@ -113,26 +113,45 @@ omc team status <team-name>
 ## 자동 동기화 상태
 
 - origin repo: `oh-my-claudecode`
-- latest source commit: `04655ee24207`
-- sync mode: `no-change`
-- 영향 분류: 일반 변경
+- latest source commit: `cf06566ddfff`
+- sync mode: `update`
+- 영향 분류: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인
 
 ### 이번 반영 포인트
 
-이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
+origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인.
 
 ### 최근 upstream 커밋
 
-- `04655ee2 Merge pull request #2503 from Yeachan-Heo/dev`
-- `5de9d4ba chore(release): fix docs/CLAUDE.md version marker for v4.11.5`
-- `8a48b7a1 Merge pull request #2502 from Yeachan-Heo/omx-issue-2500-tmux-keyword-alert-noise`
-- `545d1f3b chore(release): bump version to v4.11.5`
-- `fb6584de Prevent prompt-mode startup echo from tripping tmux keyword alerts`
-- `c3c48513 feat(release): rewrite release skill as generic repo-aware assistant (#2501)`
+- `cf06566d Merge dev for v4.11.6 release`
+- `28756531 chore(release): bump version to v4.11.6`
+- `74edf7c2 Merge pull request #2604 from Yeachan-Heo/omx/issue-2602-ralph-prd-architect-gate`
+- `f6507966 Close Ralph approval spoofing in reviewer-gated progression`
+- `e122fcf0 Prevent Ralph from approving its own injected prompt text`
+- `5481044d Prevent stale architect approvals from advancing Ralph stories`
 
 ### 변경 파일 샘플
 
-- 이번 싸이클에서는 신규 변경 파일이 없습니다.
+- `.claude-plugin/marketplace.json`
+- `.claude-plugin/plugin.json`
+- `.clawhip/project.json`
+- `.clawhip/state/prompt-submit.json`
+- `.codex`
+- `.github/release-body.md`
+- `CHANGELOG.md`
+- `README.md`
+- `bridge/__pycache__/gyoshu_bridge.cpython-310.pyc`
+- `bridge/cli.cjs`
+- `bridge/mcp-server.cjs`
+- `bridge/runtime-cli.cjs`
+- `bridge/team-bridge.cjs`
+- `bridge/team-mcp.cjs`
+- `bridge/team.js`
+- `dist/__tests__/auto-update.test.js`
+- `dist/__tests__/auto-update.test.js.map`
+- `dist/__tests__/background-cleanup-directory.test.js`
+- `dist/__tests__/background-cleanup-directory.test.js.map`
+- `dist/__tests__/bridge-help-question-regex.test.d.ts`
 
 > 이 블록은 guide sync가 자동 갱신합니다.
 <!-- GUIDE_SYNC:END -->

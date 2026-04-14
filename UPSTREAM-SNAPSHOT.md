@@ -2,9 +2,9 @@
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
 - previous synced commit: `04655ee24207f367fee785b5eb33b21234d9e0e3`
-- current synced commit: `04655ee24207f367fee785b5eb33b21234d9e0e3`
-- sync mode: `no-change`
-- impact labels: 일반 변경
+- current synced commit: `cf06566ddfff88e88f605499cd1a48609a6e7100`
+- sync mode: `update`
+- impact labels: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인
 - guide repo: `oh-my-claudecode-guide`
 
 ## 원본 한줄 요약
@@ -13,18 +13,20 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 
 ## recent upstream commits
 
-- `04655ee2 Merge pull request #2503 from Yeachan-Heo/dev`
-- `5de9d4ba chore(release): fix docs/CLAUDE.md version marker for v4.11.5`
-- `8a48b7a1 Merge pull request #2502 from Yeachan-Heo/omx-issue-2500-tmux-keyword-alert-noise`
-- `545d1f3b chore(release): bump version to v4.11.5`
-- `fb6584de Prevent prompt-mode startup echo from tripping tmux keyword alerts`
-- `c3c48513 feat(release): rewrite release skill as generic repo-aware assistant (#2501)`
-- `903e36a3 Merge pull request #2498 from Yeachan-Heo/omx-issue-2497-zero-backlog-followup-ux`
-- `1d9ecedd Back off shipped idle follow-ups once zero backlog is unchanged`
+- `cf06566d Merge dev for v4.11.6 release`
+- `28756531 chore(release): bump version to v4.11.6`
+- `74edf7c2 Merge pull request #2604 from Yeachan-Heo/omx/issue-2602-ralph-prd-architect-gate`
+- `f6507966 Close Ralph approval spoofing in reviewer-gated progression`
+- `e122fcf0 Prevent Ralph from approving its own injected prompt text`
+- `5481044d Prevent stale architect approvals from advancing Ralph stories`
+- `bdf56347 Make Ralph startup PRD gating non-bypassable`
+- `3213d01a Make Ralph enforce real PRD and story review gates`
 
 ## top-level structure
 
 - `.claude-plugin/`
+- `.clawhip/`
+- `.codex`
 - `.mcp.json`
 - `.npmignore`
 - `agents/`
@@ -42,12 +44,29 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 - `examples/`
 - `hooks/`
 - `LICENSE`
-- `missions/`
-- `package-lock.json`
 
 ## changed files
 
-- 변경 파일 없음
+- `.claude-plugin/marketplace.json`
+- `.claude-plugin/plugin.json`
+- `.clawhip/project.json`
+- `.clawhip/state/prompt-submit.json`
+- `.codex`
+- `.github/release-body.md`
+- `CHANGELOG.md`
+- `README.md`
+- `bridge/__pycache__/gyoshu_bridge.cpython-310.pyc`
+- `bridge/cli.cjs`
+- `bridge/mcp-server.cjs`
+- `bridge/runtime-cli.cjs`
+- `bridge/team-bridge.cjs`
+- `bridge/team-mcp.cjs`
+- `bridge/team.js`
+- `dist/__tests__/auto-update.test.js`
+- `dist/__tests__/auto-update.test.js.map`
+- `dist/__tests__/background-cleanup-directory.test.js`
+- `dist/__tests__/background-cleanup-directory.test.js.map`
+- `dist/__tests__/bridge-help-question-regex.test.d.ts`
 
 ## README excerpt
 
