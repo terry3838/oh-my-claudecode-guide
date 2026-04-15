@@ -113,45 +113,38 @@ omc team status <team-name>
 ## 자동 동기화 상태
 
 - origin repo: `oh-my-claudecode`
-- latest source commit: `cf06566ddfff`
+- latest source commit: `09ffccc55803`
 - sync mode: `update`
-- 영향 분류: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인
+- 영향 분류: CLI/명령어, 소스코드
 
 ### 이번 반영 포인트
 
-origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인.
+origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: CLI/명령어, 소스코드.
 
 ### 최근 upstream 커밋
 
-- `cf06566d Merge dev for v4.11.6 release`
-- `28756531 chore(release): bump version to v4.11.6`
-- `74edf7c2 Merge pull request #2604 from Yeachan-Heo/omx/issue-2602-ralph-prd-architect-gate`
-- `f6507966 Close Ralph approval spoofing in reviewer-gated progression`
-- `e122fcf0 Prevent Ralph from approving its own injected prompt text`
-- `5481044d Prevent stale architect approvals from advancing Ralph stories`
+- `09ffccc5 Fix explicit /ralplan startup stalling before planning (#2624)`
 
 ### 변경 파일 샘플
 
-- `.claude-plugin/marketplace.json`
-- `.claude-plugin/plugin.json`
-- `.clawhip/project.json`
-- `.clawhip/state/prompt-submit.json`
-- `.codex`
-- `.github/release-body.md`
-- `CHANGELOG.md`
-- `README.md`
-- `bridge/__pycache__/gyoshu_bridge.cpython-310.pyc`
 - `bridge/cli.cjs`
-- `bridge/mcp-server.cjs`
-- `bridge/runtime-cli.cjs`
-- `bridge/team-bridge.cjs`
-- `bridge/team-mcp.cjs`
-- `bridge/team.js`
-- `dist/__tests__/auto-update.test.js`
-- `dist/__tests__/auto-update.test.js.map`
-- `dist/__tests__/background-cleanup-directory.test.js`
-- `dist/__tests__/background-cleanup-directory.test.js.map`
-- `dist/__tests__/bridge-help-question-regex.test.d.ts`
+- `dist/__tests__/keyword-detector-script.test.js`
+- `dist/__tests__/keyword-detector-script.test.js.map`
+- `dist/hooks/__tests__/bridge-routing.test.js`
+- `dist/hooks/__tests__/bridge-routing.test.js.map`
+- `dist/hooks/__tests__/bridge.test.js`
+- `dist/hooks/__tests__/bridge.test.js.map`
+- `dist/hooks/bridge.d.ts.map`
+- `dist/hooks/bridge.js`
+- `dist/hooks/bridge.js.map`
+- `dist/hooks/persistent-mode/stop-hook-blocking.test.js`
+- `dist/hooks/persistent-mode/stop-hook-blocking.test.js.map`
+- `scripts/keyword-detector.mjs`
+- `src/__tests__/keyword-detector-script.test.ts`
+- `src/hooks/__tests__/bridge-routing.test.ts`
+- `src/hooks/__tests__/bridge.test.ts`
+- `src/hooks/bridge.ts`
+- `src/hooks/persistent-mode/stop-hook-blocking.test.ts`
 
 > 이 블록은 guide sync가 자동 갱신합니다.
 <!-- GUIDE_SYNC:END -->
