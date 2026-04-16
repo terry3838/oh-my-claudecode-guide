@@ -1,10 +1,10 @@
 # Upstream Snapshot — oh-my-claudecode
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
-- previous synced commit: `cf06566ddfff88e88f605499cd1a48609a6e7100`
+- previous synced commit: `09ffccc558031f384a2753328d269803c3d2f8cd`
 - current synced commit: `09ffccc558031f384a2753328d269803c3d2f8cd`
-- sync mode: `update`
-- impact labels: CLI/명령어, 소스코드
+- sync mode: `no-change`
+- impact labels: 일반 변경
 - guide repo: `oh-my-claudecode-guide`
 
 ## 원본 한줄 요약
@@ -14,6 +14,13 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 ## recent upstream commits
 
 - `09ffccc5 Fix explicit /ralplan startup stalling before planning (#2624)`
+- `cf06566d Merge dev for v4.11.6 release`
+- `28756531 chore(release): bump version to v4.11.6`
+- `74edf7c2 Merge pull request #2604 from Yeachan-Heo/omx/issue-2602-ralph-prd-architect-gate`
+- `f6507966 Close Ralph approval spoofing in reviewer-gated progression`
+- `e122fcf0 Prevent Ralph from approving its own injected prompt text`
+- `5481044d Prevent stale architect approvals from advancing Ralph stories`
+- `bdf56347 Make Ralph startup PRD gating non-bypassable`
 
 ## top-level structure
 
@@ -40,24 +47,7 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 
 ## changed files
 
-- `bridge/cli.cjs`
-- `dist/__tests__/keyword-detector-script.test.js`
-- `dist/__tests__/keyword-detector-script.test.js.map`
-- `dist/hooks/__tests__/bridge-routing.test.js`
-- `dist/hooks/__tests__/bridge-routing.test.js.map`
-- `dist/hooks/__tests__/bridge.test.js`
-- `dist/hooks/__tests__/bridge.test.js.map`
-- `dist/hooks/bridge.d.ts.map`
-- `dist/hooks/bridge.js`
-- `dist/hooks/bridge.js.map`
-- `dist/hooks/persistent-mode/stop-hook-blocking.test.js`
-- `dist/hooks/persistent-mode/stop-hook-blocking.test.js.map`
-- `scripts/keyword-detector.mjs`
-- `src/__tests__/keyword-detector-script.test.ts`
-- `src/hooks/__tests__/bridge-routing.test.ts`
-- `src/hooks/__tests__/bridge.test.ts`
-- `src/hooks/bridge.ts`
-- `src/hooks/persistent-mode/stop-hook-blocking.test.ts`
+- 변경 파일 없음
 
 ## README excerpt
 
