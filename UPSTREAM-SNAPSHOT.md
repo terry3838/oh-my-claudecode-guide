@@ -2,9 +2,9 @@
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
 - previous synced commit: `09ffccc558031f384a2753328d269803c3d2f8cd`
-- current synced commit: `09ffccc558031f384a2753328d269803c3d2f8cd`
-- sync mode: `no-change`
-- impact labels: 일반 변경
+- current synced commit: `a15b41fc418190f97f7e28f9086bd1c43185ecab`
+- sync mode: `update`
+- impact labels: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인, 테스트/검증
 - guide repo: `oh-my-claudecode-guide`
 
 ## 원본 한줄 요약
@@ -13,14 +13,14 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 
 ## recent upstream commits
 
-- `09ffccc5 Fix explicit /ralplan startup stalling before planning (#2624)`
-- `cf06566d Merge dev for v4.11.6 release`
-- `28756531 chore(release): bump version to v4.11.6`
-- `74edf7c2 Merge pull request #2604 from Yeachan-Heo/omx/issue-2602-ralph-prd-architect-gate`
-- `f6507966 Close Ralph approval spoofing in reviewer-gated progression`
-- `e122fcf0 Prevent Ralph from approving its own injected prompt text`
-- `5481044d Prevent stale architect approvals from advancing Ralph stories`
-- `bdf56347 Make Ralph startup PRD gating non-bypassable`
+- `a15b41fc Merge pull request #2669 from Yeachan-Heo/dev`
+- `99940347 Merge remote-tracking branch 'origin/main' into dev`
+- `4e730789 chore(release): bump version to v4.12.0`
+- `ab55a759 Let HUD users reprioritize main-line elements without a layout rewrite (#2655)`
+- `15799479 fix: align persistent stop hook and tighten agent output contracts (#2653)`
+- `4851e814 Merge pull request #2650 from Yeachan-Heo/fix/issue-2649-statusline-git-lock`
+- `3dc622a0 Avoid HUD git polling index lock contention`
+- `b04e3636 Merge pull request #2646 from Yeachan-Heo/fix/issue-2645-deep-interview-initial-threshold`
 
 ## top-level structure
 
@@ -47,7 +47,26 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 
 ## changed files
 
-- 변경 파일 없음
+- `.claude-plugin/marketplace.json`
+- `.claude-plugin/plugin.json`
+- `.github/release-body.md`
+- `.github/workflows/upgrade-test.yml`
+- `CHANGELOG.md`
+- `CLAUDE.md`
+- `README.md`
+- `agents/analyst.md`
+- `agents/architect.md`
+- `agents/code-reviewer.md`
+- `agents/code-simplifier.md`
+- `agents/critic.md`
+- `agents/debugger.md`
+- `agents/designer.md`
+- `agents/document-specialist.md`
+- `agents/executor.md`
+- `agents/explore.md`
+- `agents/git-master.md`
+- `agents/planner.md`
+- `agents/qa-tester.md`
 
 ## README excerpt
 
@@ -99,10 +118,16 @@ _Don't learn Claude Code. Just use OMC._
 
 **Step 1: Install**
 
-Marketplace/plugin install (recommended for most Claude Code users):
+Marketplace/plugin install (recommended for most Claude Code users).
+These are Claude Code slash commands — enter them **one at a time** (pasting both lines at once will fail):
 
 ```bash
 /plugin marketplace add https://github.com/Yeachan-Heo/oh-my-claudecode
+```
+
+Then:
+
+```bash
 /plugin install oh-my-claudecode
 ```
 
@@ -165,10 +190,4 @@ The deep interview uses Socratic questioning to clarify your thinking before any
 ## Team Mode (Recommended)
 
 Starting in **v4.1.7**, **Team** is the canonical orchestration surface in OMC. The legacy `swarm` keyword/skill has been removed; use `team` directly.
-
-```bash
-/team 3:executor "fix all TypeScript errors"
-```
-
-Use `/team ...` when you want Claude Code's in-session native team workflow. Use `omc team ...` when you want terminal-launched tmux CLI workers (`claude` / `codex` / `gemini` panes).
 ```

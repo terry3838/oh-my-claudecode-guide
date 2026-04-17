@@ -113,26 +113,45 @@ omc team status <team-name>
 ## 자동 동기화 상태
 
 - origin repo: `oh-my-claudecode`
-- latest source commit: `09ffccc55803`
-- sync mode: `no-change`
-- 영향 분류: 일반 변경
+- latest source commit: `a15b41fc4181`
+- sync mode: `update`
+- 영향 분류: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인, 테스트/검증
 
 ### 이번 반영 포인트
 
-이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
+origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인, 테스트/검증.
 
 ### 최근 upstream 커밋
 
-- `09ffccc5 Fix explicit /ralplan startup stalling before planning (#2624)`
-- `cf06566d Merge dev for v4.11.6 release`
-- `28756531 chore(release): bump version to v4.11.6`
-- `74edf7c2 Merge pull request #2604 from Yeachan-Heo/omx/issue-2602-ralph-prd-architect-gate`
-- `f6507966 Close Ralph approval spoofing in reviewer-gated progression`
-- `e122fcf0 Prevent Ralph from approving its own injected prompt text`
+- `a15b41fc Merge pull request #2669 from Yeachan-Heo/dev`
+- `99940347 Merge remote-tracking branch 'origin/main' into dev`
+- `4e730789 chore(release): bump version to v4.12.0`
+- `ab55a759 Let HUD users reprioritize main-line elements without a layout rewrite (#2655)`
+- `15799479 fix: align persistent stop hook and tighten agent output contracts (#2653)`
+- `4851e814 Merge pull request #2650 from Yeachan-Heo/fix/issue-2649-statusline-git-lock`
 
 ### 변경 파일 샘플
 
-- 이번 싸이클에서는 신규 변경 파일이 없습니다.
+- `.claude-plugin/marketplace.json`
+- `.claude-plugin/plugin.json`
+- `.github/release-body.md`
+- `.github/workflows/upgrade-test.yml`
+- `CHANGELOG.md`
+- `CLAUDE.md`
+- `README.md`
+- `agents/analyst.md`
+- `agents/architect.md`
+- `agents/code-reviewer.md`
+- `agents/code-simplifier.md`
+- `agents/critic.md`
+- `agents/debugger.md`
+- `agents/designer.md`
+- `agents/document-specialist.md`
+- `agents/executor.md`
+- `agents/explore.md`
+- `agents/git-master.md`
+- `agents/planner.md`
+- `agents/qa-tester.md`
 
 > 이 블록은 guide sync가 자동 갱신합니다.
 <!-- GUIDE_SYNC:END -->
