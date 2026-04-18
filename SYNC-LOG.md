@@ -2,14 +2,14 @@
 
 ## latest cycle
 
-- previous source sha: `09ffccc558031f384a2753328d269803c3d2f8cd`
+- previous source sha: `a15b41fc418190f97f7e28f9086bd1c43185ecab`
 - current source sha: `a15b41fc418190f97f7e28f9086bd1c43185ecab`
-- mode: `update`
-- impact labels: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인, 테스트/검증
+- mode: `no-change`
+- impact labels: 일반 변경
 
 ## decision
 
-origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인, 테스트/검증.
+이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
 
 ## upstream commits reviewed
 
@@ -27,23 +27,4 @@ origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽
 - source remote: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
 - docs/interesting dirs: docs/, skills/, src/, tests/, examples/
 - changed file sample:
-- `.claude-plugin/marketplace.json`
-- `.claude-plugin/plugin.json`
-- `.github/release-body.md`
-- `.github/workflows/upgrade-test.yml`
-- `CHANGELOG.md`
-- `CLAUDE.md`
-- `README.md`
-- `agents/analyst.md`
-- `agents/architect.md`
-- `agents/code-reviewer.md`
-- `agents/code-simplifier.md`
-- `agents/critic.md`
-- `agents/debugger.md`
-- `agents/designer.md`
-- `agents/document-specialist.md`
-- `agents/executor.md`
-- `agents/explore.md`
-- `agents/git-master.md`
-- `agents/planner.md`
-- `agents/qa-tester.md`
+- 변경 파일 없음
