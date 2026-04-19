@@ -2,9 +2,9 @@
 
 - source repo: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
 - previous synced commit: `a15b41fc418190f97f7e28f9086bd1c43185ecab`
-- current synced commit: `a15b41fc418190f97f7e28f9086bd1c43185ecab`
-- sync mode: `no-change`
-- impact labels: 일반 변경
+- current synced commit: `c4db4a883bd0524f7a23b0517c6b5ac40997f34e`
+- sync mode: `update`
+- impact labels: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인
 - guide repo: `oh-my-claudecode-guide`
 
 ## 원본 한줄 요약
@@ -13,14 +13,14 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 
 ## recent upstream commits
 
-- `a15b41fc Merge pull request #2669 from Yeachan-Heo/dev`
-- `99940347 Merge remote-tracking branch 'origin/main' into dev`
-- `4e730789 chore(release): bump version to v4.12.0`
-- `ab55a759 Let HUD users reprioritize main-line elements without a layout rewrite (#2655)`
-- `15799479 fix: align persistent stop hook and tighten agent output contracts (#2653)`
-- `4851e814 Merge pull request #2650 from Yeachan-Heo/fix/issue-2649-statusline-git-lock`
-- `3dc622a0 Avoid HUD git polling index lock contention`
-- `b04e3636 Merge pull request #2646 from Yeachan-Heo/fix/issue-2645-deep-interview-initial-threshold`
+- `c4db4a88 Merge pull request #2720 from Yeachan-Heo/dev`
+- `7ce1643f chore(release): bump version to v4.12.1`
+- `05b7c041 Merge pull request #2719 from Yeachan-Heo/fix/issue-2715-hud-npm-cmd-einval`
+- `dba5633f Merge pull request #2718 from Yeachan-Heo/fix/issue-2714-plan-state-loop`
+- `ebf2706a Credit documentation stewardship in the project README`
+- `360ca59b Credit documentation stewardship in the project README`
+- `56513f28 Fix Windows HUD npm root discovery`
+- `93b72258 Prevent post-ralplan team follow-ups from looping back into planning`
 
 ## top-level structure
 
@@ -47,7 +47,26 @@ English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](READM
 
 ## changed files
 
-- 변경 파일 없음
+- `.claude-plugin/marketplace.json`
+- `.claude-plugin/plugin.json`
+- `.github/release-body.md`
+- `CHANGELOG.md`
+- `README.de.md`
+- `README.es.md`
+- `README.fr.md`
+- `README.it.md`
+- `README.ja.md`
+- `README.ko.md`
+- `README.md`
+- `README.pt.md`
+- `README.ru.md`
+- `README.tr.md`
+- `README.vi.md`
+- `README.zh.md`
+- `agents/git-master.md`
+- `bridge/cli.cjs`
+- `bridge/mcp-server.cjs`
+- `bridge/runtime-cli.cjs`
 
 ## README excerpt
 
@@ -84,6 +103,12 @@ _Don't learn Claude Code. Just use OMC._
 | Name | GitHub |
 | --- | --- |
 | Sigrid Jin | [@sigridjineth](https://github.com/sigridjineth) |
+
+## Document Specialists
+
+| Name | GitHub |
+| --- | --- |
+| devswha | [@devswha](https://github.com/devswha) |
 
 ## Top Collaborators
 
@@ -165,10 +190,4 @@ If you're uncertain about requirements, have a vague idea, or want to micromanag
 ```
 /deep-interview "I want to build a task management app"
 ```
-
-The deep interview uses Socratic questioning to clarify your thinking before any code is written. It exposes hidden assumptions and measures clarity across weighted dimensions, ensuring you know exactly what to build before execution begins.
-
-## Team Mode (Recommended)
-
-Starting in **v4.1.7**, **Team** is the canonical orchestration surface in OMC. The legacy `swarm` keyword/skill has been removed; use `team` directly.
 ```

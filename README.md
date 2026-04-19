@@ -113,26 +113,45 @@ omc team status <team-name>
 ## 자동 동기화 상태
 
 - origin repo: `oh-my-claudecode`
-- latest source commit: `a15b41fc4181`
-- sync mode: `no-change`
-- 영향 분류: 일반 변경
+- latest source commit: `c4db4a883bd0`
+- sync mode: `update`
+- 영향 분류: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인
 
 ### 이번 반영 포인트
 
-이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
+origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인.
 
 ### 최근 upstream 커밋
 
-- `a15b41fc Merge pull request #2669 from Yeachan-Heo/dev`
-- `99940347 Merge remote-tracking branch 'origin/main' into dev`
-- `4e730789 chore(release): bump version to v4.12.0`
-- `ab55a759 Let HUD users reprioritize main-line elements without a layout rewrite (#2655)`
-- `15799479 fix: align persistent stop hook and tighten agent output contracts (#2653)`
-- `4851e814 Merge pull request #2650 from Yeachan-Heo/fix/issue-2649-statusline-git-lock`
+- `c4db4a88 Merge pull request #2720 from Yeachan-Heo/dev`
+- `7ce1643f chore(release): bump version to v4.12.1`
+- `05b7c041 Merge pull request #2719 from Yeachan-Heo/fix/issue-2715-hud-npm-cmd-einval`
+- `dba5633f Merge pull request #2718 from Yeachan-Heo/fix/issue-2714-plan-state-loop`
+- `ebf2706a Credit documentation stewardship in the project README`
+- `360ca59b Credit documentation stewardship in the project README`
 
 ### 변경 파일 샘플
 
-- 이번 싸이클에서는 신규 변경 파일이 없습니다.
+- `.claude-plugin/marketplace.json`
+- `.claude-plugin/plugin.json`
+- `.github/release-body.md`
+- `CHANGELOG.md`
+- `README.de.md`
+- `README.es.md`
+- `README.fr.md`
+- `README.it.md`
+- `README.ja.md`
+- `README.ko.md`
+- `README.md`
+- `README.pt.md`
+- `README.ru.md`
+- `README.tr.md`
+- `README.vi.md`
+- `README.zh.md`
+- `agents/git-master.md`
+- `bridge/cli.cjs`
+- `bridge/mcp-server.cjs`
+- `bridge/runtime-cli.cjs`
 
 > 이 블록은 guide sync가 자동 갱신합니다.
 <!-- GUIDE_SYNC:END -->
