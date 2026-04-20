@@ -2,14 +2,14 @@
 
 ## latest cycle
 
-- previous source sha: `a15b41fc418190f97f7e28f9086bd1c43185ecab`
+- previous source sha: `c4db4a883bd0524f7a23b0517c6b5ac40997f34e`
 - current source sha: `c4db4a883bd0524f7a23b0517c6b5ac40997f34e`
-- mode: `update`
-- impact labels: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인
+- mode: `no-change`
+- impact labels: 일반 변경
 
 ## decision
 
-origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽고 반영했습니다. 핵심 영향 영역: README/소개, 설치/설정, CLI/명령어, 스킬/플러그인.
+이번 싸이클에서는 origin 변경이 없어 guide 본문은 유지했고, 동기화 기준점만 재확인했습니다.
 
 ## upstream commits reviewed
 
@@ -27,23 +27,4 @@ origin 변경 파일을 기준으로 guide 문서의 관련 섹션을 다시 읽
 - source remote: `https://github.com/Yeachan-Heo/oh-my-claudecode.git`
 - docs/interesting dirs: docs/, skills/, src/, tests/, examples/
 - changed file sample:
-- `.claude-plugin/marketplace.json`
-- `.claude-plugin/plugin.json`
-- `.github/release-body.md`
-- `CHANGELOG.md`
-- `README.de.md`
-- `README.es.md`
-- `README.fr.md`
-- `README.it.md`
-- `README.ja.md`
-- `README.ko.md`
-- `README.md`
-- `README.pt.md`
-- `README.ru.md`
-- `README.tr.md`
-- `README.vi.md`
-- `README.zh.md`
-- `agents/git-master.md`
-- `bridge/cli.cjs`
-- `bridge/mcp-server.cjs`
-- `bridge/runtime-cli.cjs`
+- 변경 파일 없음
